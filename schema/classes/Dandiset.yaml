@@ -43,8 +43,6 @@
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:ethics_approval
     schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:ethics_approval
-    schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:access
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:relatedResource
@@ -58,6 +56,8 @@
   - "@id": schema:url
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:contentSize
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:distribution
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:repository
     schema:domainIncludes: dandi:Dandiset

@@ -1,0 +1,37 @@
+"@context":
+  schema: http://schema.org/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dandi: http://dandiarchive.org/schema/
+"@graph":
+  - "@id": dandi:Asset
+    "@type": rdfs:Class
+    rdfs:comment: An item describing the contents of a binary blob.
+    rdfs:label: Asset
+  - "@id": schema:downloadUrl
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:contentType
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:contentSize
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:access
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:relatedResource
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:version
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:datePublished
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:modality
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:measurementTechnigue
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:variableMeasured
+    schema:domainIncludes: dandi:Dandiset
+
+
