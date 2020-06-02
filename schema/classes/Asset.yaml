@@ -4,6 +4,11 @@
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#
   dandi: http://dandiarchive.org/schema/
+  crypto: http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/
+  md5: cyrpto:md5
+  sha1: crypto:sha1
+  sha256: crypto:sha256
+  sha512: crypto:sha512
 "@graph":
   - "@id": dandi:Asset
     "@type": rdfs:Class
@@ -16,6 +21,14 @@
   - "@id": schema:contentSize
     schema:domainIncludes: dandi:Asset
   - "@id": schema:encodingFormat
+    schema:domainIncludes: dandi:Asset
+  - "@id": md5
+    schema:domainIncludes: dandi:Asset
+  - "@id": sha1
+    schema:domainIncludes: dandi:Asset
+  - "@id": sha256
+    schema:domainIncludes: dandi:Asset
+  - "@id": sha512
     schema:domainIncludes: dandi:Asset
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Asset
