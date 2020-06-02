@@ -1,0 +1,79 @@
+"@context":
+  schema: http://schema.org/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dandi: http://dandiarchive.org/schema/
+"@graph":
+  - "@id": dandi:Dandiset
+    "@type": rdfs:Class
+    http://purl.org/dc/terms/source:
+      "@id": http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass
+    http://www.w3.org/2002/07/owl#equivalentClass:
+      - "@id": http://rdfs.org/ns/void#Dataset
+      - "@id": http://www.w3.org/ns/dcat#Dataset
+      - "@id": http://purl.org/dc/dcmitype/Dataset
+    rdfs:comment: A body of structured information describing a DANDI dataset
+    rdfs:label: Dandiset
+    rdfs:subClassOf:
+      "@id": schema:Dataset
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:description
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:attributedTo
+    schema:domainIncludes: dandi:Dandiset
+    "@type": schema:ItemListElement
+    schema:rangeIncludes:
+      - "@id": schema:Person
+      - "@id": schema:Organization
+  - "@id": schema:license
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:keyword
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:about
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:study_target
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:protocol
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:ethics_approval
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:ethics_approval
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:access
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:relatedResource
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:acknowledgement
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:version
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:datePublished
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:url
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:contentSize
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:repository
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberSubjects
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberSamples
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberCells
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:standard
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:modality
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:measurementTechnigue
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:variableMeasured
+    schema:domainIncludes: dandi:Dandiset
+
+
