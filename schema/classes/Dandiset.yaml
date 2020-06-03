@@ -39,7 +39,7 @@
   - "@id": schema:about
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:study_target
-    "@type":rdf:Property
+    "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
     schema:rangeIncludes:
       - "@id": schema:URL
@@ -93,4 +93,3 @@
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:variableMeasured
     schema:domainIncludes: dandi:Dandiset
-
