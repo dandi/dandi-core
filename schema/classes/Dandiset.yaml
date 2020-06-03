@@ -23,7 +23,7 @@
   - "@id": schema:description
     schema:domainIncludes: dandi:Dandiset
   - "@id": citationOrder
-    "@type":rdf:Property
+    "@type": rdf:Property
     rdfs:subClassOf:
       "@id": schema:itemListElement
   - "@id": attributedTo
@@ -93,5 +93,4 @@
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:variableMeasured
     schema:domainIncludes: dandi:Dandiset
-
 
