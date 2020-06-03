@@ -22,9 +22,13 @@
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:description
     schema:domainIncludes: dandi:Dandiset
+  - "@id": citationOrder
+    "@type":rdf:Property
+    rdfs:subClassOf:
+      "@id": schema:itemListElement
   - "@id": attributedTo
+    "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
-    "@type": schema:ItemListElement
     schema:rangeIncludes:
       - "@id": dandi:Person
       - "@id": dandi:Organization
@@ -35,17 +39,29 @@
   - "@id": schema:about
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:study_target
+    "@type":rdf:Property
     schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes:
+      - "@id": schema:URL
+      - "@id": schema:Text
   - "@id": dandi:protocol
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:ethics_approval
+    "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:EthicsApproval
   - "@id": dandi:access
+    "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:AccessRequirements
   - "@id": dandi:relatedResource
+    "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:Resource
   - "@id": dandi:acknowledgement
+    "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: schema:Text
   - "@id": schema:version
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:datePublished
@@ -57,6 +73,11 @@
   - "@id": schema:distribution
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:repository
+    "@type": rdf:Property
+    rdfs:comment: An identifier of a repository in which an entity is housed
+    rdfs:label: Repository
+    rdfs:subClassOf:
+      "@id": schema:identifier
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:numberSubjects
     schema:domainIncludes: dandi:Dandiset

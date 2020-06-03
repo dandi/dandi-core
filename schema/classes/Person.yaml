@@ -18,9 +18,9 @@
     schema:domainIncludes: dandi:Person
   - "@id": schema:affiliation
     schema:domainIncludes: dandi:Person
-  - "@id": role
+  - "@id": schema:roleName
     schema:domainIncludes: dandi:Person
-    schema:rangeIncludes: dandi:Role
+    schema:rangeIncludes: dandi:RoleType
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Person
 

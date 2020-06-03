@@ -1,158 +1,108 @@
 "@context": ../context/dandi.yaml
 "@graph":
-  - "@id": dandi:Role
+  - "@id": dandi:RoleType
     "@type": rdfs:Class
-    rdfs:comment: A role
-    rdfs:label: Role
+    rdfs:comment: An enumeration of rols
+    rdfs:label: Role Type
     rdfs:subClassOf:
-      "@id": schema:Thing
+      "@id": schema:Enumeration
   - "@id": dandi:Author
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Author
     rdfs:label: Author
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Conceptualization
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Conceptualization
     rdfs:label: Conceptualization
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:ContactPerson
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Contact Person
     rdfs:label: Contact Person
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:DataCollector
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Data Collector
     rdfs:label: Data Collector
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:DataCurator
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Data Curator
     rdfs:label: Data Curator
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:DataManager
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Data Manager
     rdfs:label: Data Manager
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:FormalAnalysis
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Formal Analysis
     rdfs:label: Formal Analysis
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:FundingAcquisition
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Funding Acquisition
     rdfs:label: Funding Acquisition
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Investigation
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Investigation
     rdfs:label: Investigation
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Maintainer
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Maintainer
     rdfs:label: Maintainer
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Methodology
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Methodology
     rdfs:label: Methodology
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Producer
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Producer
     rdfs:label: Producer
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:ProjectLeader
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Project Leader
     rdfs:label: Project Leader
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:ProjectManager
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Project Manager
     rdfs:label: Project Manager
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:ProjectMember
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Project Member
     rdfs:label: Project Member
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:ProjectAdministration
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Project Administration
     rdfs:label: Project Administration
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Researcher
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Researcher
     rdfs:label: Researcher
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Resources
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Resources
     rdfs:label: Resources
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Software
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Software
     rdfs:label: Software
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Supervision
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Supervision
     rdfs:label: Supervision
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Validation
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Validation
     rdfs:label: Validation
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Visualization
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Visualization
     rdfs:label: Visualization
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Funder
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Funder
     rdfs:label: Funder
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Sponsor
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Sponsor
     rdfs:label: Sponsor
-    rdfs:subClassOf:
-      "@id": dandi:Role
   - "@id": dandi:Other
-    "@type": rdfs:Class
+    "@type": dandi:RoleType
     rdfs:comment: Other
     rdfs:label: Other
-    rdfs:subClassOf:
-      "@id": dandi:Role

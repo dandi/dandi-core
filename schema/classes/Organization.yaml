@@ -4,8 +4,6 @@
     "@type":
     - rdfs:Class
     - prov:Organization
-    http://www.w3.org/2002/07/owl#equivalentClass:
-      - "@id": http://xmlns.com/foaf/0.1/Person
     rdfs:comment: An organization such as a university, company, funding body, etc.,.
     rdfs:label: Organization
     rdfs:subClassOf:
@@ -18,9 +16,9 @@
     schema:domainIncludes: dandi:Organization
   - "@id": schema:contactPoint
     schema:domainIncludes: dandi:Organization
-  - "@id": role
+  - "@id": schema:roleName
     schema:domainIncludes: dandi:Organization
-    schema:rangeIncludes: dandi:Role
+    schema:rangeIncludes: dandi:RoleType
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Organization
 
