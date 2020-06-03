@@ -102,6 +102,10 @@
     "@type": dandi:RoleType
     rdfs:comment: Sponsor
     rdfs:label: Sponsor
+  - "@id": dandi:StudyParticipant
+    "@type": dandi:RoleType
+    rdfs:comment: Participant in a study
+    rdfs:label: Study participant
   - "@id": dandi:Other
     "@type": dandi:RoleType
     rdfs:comment: Other
