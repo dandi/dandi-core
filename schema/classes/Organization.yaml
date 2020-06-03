@@ -1,0 +1,27 @@
+"@context": ../context/dandi.yaml
+"@graph":
+  - "@id": dandi:Organization
+    "@type":
+    - rdfs:Class
+    - prov:Organization
+    http://www.w3.org/2002/07/owl#equivalentClass:
+      - "@id": http://xmlns.com/foaf/0.1/Person
+    rdfs:comment: An organization such as a university, company, funding body, etc.,.
+    rdfs:label: Organization
+    rdfs:subClassOf:
+      "@id": schema:Organization
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:email
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:contactPoint
+    schema:domainIncludes: dandi:Organization
+  - "@id": role
+    schema:domainIncludes: dandi:Organization
+    schema:rangeIncludes: dandi:Role
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Organization
+
+

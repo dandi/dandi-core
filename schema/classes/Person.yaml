@@ -1,0 +1,27 @@
+"@context": ../context/dandi.yaml
+"@graph":
+  - "@id": dandi:Person
+    "@type":
+    - rdfs:Class
+    - prov:Person
+    http://www.w3.org/2002/07/owl#equivalentClass:
+      - "@id": http://xmlns.com/foaf/0.1/Person
+    rdfs:comment: An individual
+    rdfs:label: Person
+    rdfs:subClassOf:
+      "@id": schema:Person
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Person
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Person
+  - "@id": schema:email
+    schema:domainIncludes: dandi:Person
+  - "@id": schema:affiliation
+    schema:domainIncludes: dandi:Person
+  - "@id": role
+    schema:domainIncludes: dandi:Person
+    schema:rangeIncludes: dandi:Role
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Person
+
+

@@ -1,0 +1,13 @@
+"@context":
+  schema: http://schema.org/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dandi: http://dandiarchive.org/schema/
+  prov: http://www.w3.org/ns/prov#
+  crypto: http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/
+  md5: cyrpto:md5
+  sha1: crypto:sha1
+  sha256: crypto:sha256
+  sha512: crypto:sha512
+  attributedTo: prov:wasAttributedTo

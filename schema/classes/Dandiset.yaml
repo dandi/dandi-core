@@ -1,12 +1,9 @@
-"@context":
-  schema: http://schema.org/
-  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  dandi: http://dandiarchive.org/schema/
+"@context": ../context/dandi.yaml
 "@graph":
   - "@id": dandi:Dandiset
-    "@type": rdfs:Class
+    "@type":
+    - rdfs:Class
+    - prov:Entity
     http://purl.org/dc/terms/source:
       "@id": http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass
     http://www.w3.org/2002/07/owl#equivalentClass:
@@ -25,12 +22,12 @@
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:description
     schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:attributedTo
+  - "@id": attributedTo
     schema:domainIncludes: dandi:Dandiset
     "@type": schema:ItemListElement
     schema:rangeIncludes:
-      - "@id": schema:Person
-      - "@id": schema:Organization
+      - "@id": dandi:Person
+      - "@id": dandi:Organization
   - "@id": schema:license
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:keyword
