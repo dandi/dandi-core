@@ -26,12 +26,16 @@
     "@type": rdf:Property
     rdfs:subClassOf:
       "@id": schema:itemListElement
-  - "@id": attributedTo
-    "@type": rdf:Property
+  - "@id": dandi:contributor
+    "@type":
+    - rdf:Property
+    - prov:wasAttributedTo
+    rdfs:subClassOf:
+      "@id": schema:contributor
+    rdfs:comment: A contributor to a Dandiset
+    rdfs:label: Data contributor
     schema:domainIncludes: dandi:Dandiset
-    schema:rangeIncludes:
-      - "@id": dandi:Person
-      - "@id": dandi:Organization
+    schema:rangeIncludes: dandi:Contributor
   - "@id": schema:license
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:keyword
@@ -42,6 +46,7 @@
     "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
     schema:rangeIncludes:
+      - "@id": schema:Thing
       - "@id": schema:URL
       - "@id": schema:Text
   - "@id": dandi:protocol
@@ -79,13 +84,26 @@
     rdfs:subClassOf:
       "@id": schema:identifier
     schema:domainIncludes: dandi:Dandiset
+  # Provenance records. Attribution is already covered earlier
+  - "@id": dandi:generatedBy
+    "@type":
+    - rdf:Property
+    - prov:wasGeneratedBy
+    rdfs:comment: Describes the activity that generated this dataset
+    rdfs:label: Generating activity
+    rdfs:subClassOf:
+      "@id": schema:identifier
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:Project
+  # All of the following properties are calculated. Should these be at the
+  # top level or in a structure?
   - "@id": dandi:numberSubjects
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:numberSamples
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:numberCells
     schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:standard
+  - "@id": dandi:dataStandard
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:modality
     schema:domainIncludes: dandi:Dandiset

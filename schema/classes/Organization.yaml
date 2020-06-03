@@ -16,9 +16,6 @@
     schema:domainIncludes: dandi:Organization
   - "@id": schema:contactPoint
     schema:domainIncludes: dandi:Organization
-  - "@id": schema:roleName
-    schema:domainIncludes: dandi:Organization
-    schema:rangeIncludes: dandi:RoleType
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Organization
 
