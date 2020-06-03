@@ -12,6 +12,8 @@
       "@id": schema:Person
   - "@id": schema:identifier
     schema:domainIncludes: dandi:Person
+  - "@id": schema:sameAs
+    schema:domainIncludes: schema:Thing
   - "@id": schema:name
     schema:domainIncludes: dandi:Person
   - "@id": schema:email

@@ -24,6 +24,8 @@
     schema:domainIncludes: dandi:Asset
   - "@id": schema:identifier
     schema:domainIncludes: dandi:Asset
+  - "@id": schema:sameAs
+    schema:domainIncludes: schema:Thing
   - "@id": dandi:access
     schema:domainIncludes: dandi:Asset
   - "@id": dandi:relatedResource

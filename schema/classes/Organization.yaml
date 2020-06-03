@@ -14,6 +14,8 @@
     schema:domainIncludes: dandi:Organization
   - "@id": schema:email
     schema:domainIncludes: dandi:Organization
+  - "@id": schema:sameAs
+    schema:domainIncludes: schema:Thing
   - "@id": schema:contactPoint
     schema:domainIncludes: dandi:Organization
   - "@id": schema:schemaVersion

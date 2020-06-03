@@ -10,6 +10,8 @@
     rdfs:label: Project
   - "@id": schema:identifier
     schema:domainIncludes: dandi:Project
+  - "@id": schema:sameAs
+    schema:domainIncludes: schema:Thing
   - "@id": schema:name
     schema:domainIncludes: dandi:Project
   - "@id": schema:description
