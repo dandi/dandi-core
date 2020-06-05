@@ -16,8 +16,12 @@
     - dandi:Person
     - dandi:Organization
   - "@id": schema:roleName
-    schema:domainIncludes: dandi:Person
+    schema:domainIncludes: dandi:Contributor
     schema:rangeIncludes: dandi:RoleType
+  - "@id": dandi:awardNumber
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Contributor
+    schema:rangeIncludes: schema:Text
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Person
 

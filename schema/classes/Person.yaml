@@ -20,6 +20,9 @@
     schema:domainIncludes: dandi:Person
   - "@id": schema:affiliation
     schema:domainIncludes: dandi:Person
+    schema:rangeIncludes:
+    - dandi:Organization
+    - schema:Text
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Person
 
