@@ -30,7 +30,7 @@
   - "@id": schema:identifier
     schema:domainIncludes: dandi:Person
   - "@id": schema:sameAs
-    schema:domainIncludes: schema:Thing
+    schema:domainIncludes: dandi:Person
   - "@id": schema:name
     schema:domainIncludes: dandi:Person
   - "@id": schema:email
@@ -42,5 +42,4 @@
     - schema:Text
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Person
-
 
