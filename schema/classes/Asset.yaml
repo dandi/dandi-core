@@ -47,8 +47,6 @@
     schema:domainIncludes: dandi:Asset
   - "@id": dandi:relatedResource
     schema:domainIncludes: dandi:Asset
-  - "@id": schema:version
-    schema:domainIncludes: dandi:Asset
   - "@id": schema:datePublished
     schema:domainIncludes: dandi:Asset
   - "@id": dandi:modality

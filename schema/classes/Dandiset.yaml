@@ -114,11 +114,11 @@
     schema:rangeIncludes: dandi:Project
   # All of the following properties are calculated. Should these be at the
   # top level or in a structure?
-  - "@id": dandi:numberSubjects
+  - "@id": dandi:numberOfSubjects
     schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:numberSamples
+  - "@id": dandi:numberOfSamples
     schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:numberCells
+  - "@id": dandi:numberOfCells
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:dataStandard
     schema:domainIncludes: dandi:Dandiset
