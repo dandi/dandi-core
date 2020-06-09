@@ -55,7 +55,7 @@
     schema:rangeIncludes: dandi:Contributor
   - "@id": schema:license
     schema:domainIncludes: dandi:Dandiset
-  - "@id": schema:keyword
+  - "@id": schema:keywords
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:about
     schema:domainIncludes: dandi:Dandiset
