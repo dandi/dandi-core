@@ -106,7 +106,8 @@ def convertv1(filename):
             if not isinstance(value, list):
                 value = [value]
             newmeta[newkey].extend(value)
-    print(yaml.dump(newmeta))
+    print(yaml.dump(newmeta, indent=2,
+                    default_flow_style=False))
     return newmeta
 
 

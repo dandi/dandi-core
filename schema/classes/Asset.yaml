@@ -29,14 +29,13 @@
     schema:domainIncludes: dandi:Asset
   - "@id": schema:encodingFormat
     schema:domainIncludes: dandi:Asset
-  - "@id": md5
+  - "@id": dandi:digest
+    "@type":
+    - rdf:Property
+    rdfs:comment: A list of checksums for an Asset
+    rdfs:label: Dandi asset digest
     schema:domainIncludes: dandi:Asset
-  - "@id": sha1
-    schema:domainIncludes: dandi:Asset
-  - "@id": sha256
-    schema:domainIncludes: dandi:Asset
-  - "@id": sha512
-    schema:domainIncludes: dandi:Asset
+    schema:rangeIncludes: dandi:Digest
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Asset
   - "@id": schema:identifier
