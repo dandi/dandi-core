@@ -115,16 +115,16 @@ class Organization(Contributor):
 
 
 class EthicsApproval(BaseModel):
-    identifier: Identifier
+    identifier: Identifier = None
     name: str
     url: str
 
 
 class Resource(BaseModel):
-    identifier: Identifier
-    name: str
+    identifier: Identifier = None
+    name: str = None
     url: str
-    repository: AnyUrl
+    repository: AnyUrl = None
     relation: Relation
 
 
@@ -134,10 +134,6 @@ class AccessRequirements(BaseModel):
     contactPoint: str
     description: str
     embargoedUntil: date
-
-
-class DataDownload(BaseModel):
-    pass
 
 
 class PropertyValue(BaseModel):
@@ -164,8 +160,8 @@ class DandisetStat(BaseModel):
 class Dandiset(BaseModel):
     """A body of structured information describing a DANDI dataset
     """
-    schemaVersion: str
-    identifier: Identifier
+    schemaVersion: str = Field(default="0.0.0", readonly=True)
+    identifier: Identifier = Field(readonly=True)
     name: str
     description: str
 
@@ -182,18 +178,18 @@ class Dandiset(BaseModel):
     acknowledgement: str = None
 
     # From assets
-    measurementTechnigue: List[str]
-    variableMeasured: List[PropertyValue]
-    dandisetStats: DandisetStat
+    measurementTechnigue: List[str] = Field(readonly=True)
+    variableMeasured: List[PropertyValue] = Field(readonly=True)
+    dandisetStats: DandisetStat = Field(readonly=True)
 
     # On publish
-    version: str
-    datePublished: date
-    url: AnyUrl
-    contentSize: str
-    repository: AnyUrl
-    manifestLocation: AnyUrl
-    generatedBy: str
+    version: str = Field(readonly=True)
+    datePublished: date = Field(readonly=True)
+    url: AnyUrl = Field(readonly=True)
+    contentSize: str = Field(readonly=True)
+    repository: AnyUrl = Field(readonly=True)
+    manifestLocation: AnyUrl = Field(readonly=True)
+    generatedBy: str = Field(readonly=True)
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):

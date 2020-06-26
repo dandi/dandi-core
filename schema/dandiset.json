@@ -5,10 +5,18 @@
   "properties": {
     "schemaVersion": {
       "title": "Schemaversion",
+      "default": "0.0.0",
+      "readonly": true,
       "type": "string"
     },
     "identifier": {
-      "$ref": "#/definitions/Identifier"
+      "title": "Identifier",
+      "readonly": true,
+      "allOf": [
+        {
+          "$ref": "#/definitions/Identifier"
+        }
+      ]
     },
     "name": {
       "title": "Name",
@@ -107,6 +115,7 @@
     },
     "measurementTechnigue": {
       "title": "Measurementtechnigue",
+      "readonly": true,
       "type": "array",
       "items": {
         "type": "string"
@@ -114,25 +123,35 @@
     },
     "variableMeasured": {
       "title": "Variablemeasured",
+      "readonly": true,
       "type": "array",
       "items": {
         "$ref": "#/definitions/PropertyValue"
       }
     },
     "dandisetStats": {
-      "$ref": "#/definitions/DandisetStat"
+      "title": "Dandisetstats",
+      "readonly": true,
+      "allOf": [
+        {
+          "$ref": "#/definitions/DandisetStat"
+        }
+      ]
     },
     "version": {
       "title": "Version",
+      "readonly": true,
       "type": "string"
     },
     "datePublished": {
       "title": "Datepublished",
+      "readonly": true,
       "type": "string",
       "format": "date"
     },
     "url": {
       "title": "Url",
+      "readonly": true,
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
@@ -140,10 +159,12 @@
     },
     "contentSize": {
       "title": "Contentsize",
+      "readonly": true,
       "type": "string"
     },
     "repository": {
       "title": "Repository",
+      "readonly": true,
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
@@ -151,6 +172,7 @@
     },
     "manifestLocation": {
       "title": "Manifestlocation",
+      "readonly": true,
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
@@ -158,11 +180,11 @@
     },
     "generatedBy": {
       "title": "Generatedby",
+      "readonly": true,
       "type": "string"
     }
   },
   "required": [
-    "schemaVersion",
     "identifier",
     "name",
     "description",
@@ -437,7 +459,6 @@
         }
       },
       "required": [
-        "identifier",
         "name",
         "url"
       ]
@@ -505,10 +526,7 @@
         }
       },
       "required": [
-        "identifier",
-        "name",
         "url",
-        "repository",
         "relation"
       ]
     },
