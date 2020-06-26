@@ -19,7 +19,7 @@ class License(str, Enum):
 
 
 class RoleType(str, Enum):
-    author = "Author"
+    Author = "Author"
     Conceptualization = "Conceptualization"
     ContactPerson = "ContactPerson"
     DataCollector = "DataCollector"
@@ -111,7 +111,7 @@ class Person(Contributor):
 
 
 class Organization(Contributor):
-    contactPoint: str
+    contactPoint: str = None
 
 
 class EthicsApproval(BaseModel):
@@ -124,16 +124,21 @@ class Resource(BaseModel):
     identifier: Union[str, AnyUrl, Identifier] = None
     name: str = None
     url: str
-    repository: AnyUrl = None
+    repository: Union[str, AnyUrl] = None
     relation: Relation
+
+
+class About(BaseModel):
+    identifier: Union[str, AnyUrl, Identifier] = None
+    name: str = None
 
 
 class AccessRequirements(BaseModel):
     status: AccessType
-    email: EmailStr
-    contactPoint: str
-    description: str
-    embargoedUntil: date
+    email: EmailStr = None
+    contactPoint: str = None
+    description: str = None
+    embargoedUntil: date = None
 
 
 class PropertyValue(BaseModel):
@@ -170,7 +175,7 @@ class Dandiset(BaseModel):
     license: License
     keywords: List[str]
     access: List[AccessRequirements]
-    about: List[str] = None
+    about: List[About] = None
     study_target: List[Union[str, AnyUrl]] = None
     protocol: List[str] = None
     ethicsApproval: List[EthicsApproval] = None

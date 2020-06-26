@@ -2,8 +2,8 @@ about:
 - identifier: MTL
   name: Medial Temporal Lobe
 access:
-  email: nand.chandravadia@cshs.org
-  status: open
+- email: nand.chandravadia@cshs.org
+  status: Open
 contributor:
 - affiliations:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
@@ -161,7 +161,7 @@ contributor:
   roleName:
   - Author
   - Conceptualization
-  - Fundingacquisition
+  - FundingAcquisition
   - ProjectMember
   - Resources
   - Software
@@ -169,22 +169,23 @@ contributor:
   - Validation
 - awardNumber: U01NS103792
   name: National Institute of Neurological Disorders and Stroke
-  roleName: Sponsor
+  roleName: &id001
+  - Sponsor
 - awardNumber: '1554105'
   name: National Science Foundation
-  roleName: Sponsor
+  roleName: *id001
 - awardNumber: R01MH110831
   name: National Institute of Mental Health
-  roleName: Sponsor
+  roleName: *id001
 - name: McKnight Endowment for Neuroscience
-  roleName: Sponsor
+  roleName: *id001
 - name: NARSAD Young Investigator grant from the Brain & Behavior Research Foundation
-  roleName: Sponsor
+  roleName: *id001
 - name: Kavli Foundation
-  roleName: Sponsor
+  roleName: *id001
 - awardNumber: U19NS104590
   name: BRAIN initiative
-  roleName: Sponsor
+  roleName: *id001
 dandisetStats:
   numberOfSubjects: 59
 description: 'A challenge for data sharing in systems neuroscience is the multitude

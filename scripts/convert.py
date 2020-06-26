@@ -8,7 +8,7 @@ mapping = {'identifier': ['identifier'],
            'name': ['name'],
            'description': ['description'],
            'contributors': ['contributor'],
-           'sponsors': ['contributor', 'Sponsor'],
+           'sponsors': ['contributor', ['Sponsor']],
            'license': ['license'],
            'keywords': ['keywords'],
            'project': ['generatedBy'],
@@ -33,8 +33,14 @@ def toContributor(value):
     for item in value:
         contrib = {}
         if "roles" in item:
-            contrib["roleName"] = [f"{val.replace(' ', '')}" for val in
-                                      item["roles"]]
+            roles = []
+            for role in item["roles"]:
+                tmp = role.split()
+                if len(tmp) > 1:
+                    roles.append("".join([val.capitalize() for val in tmp]))
+                else:
+                    roles.append(tmp.pop())
+            contrib["roleName"] = roles
             del item["roles"]
         if "awardNumber" in item:
             contrib["awardNumber"] = item["awardNumber"]
@@ -65,8 +71,8 @@ def convertv1(filename):
         if oldkey in ['contributors', "sponsors"]:
             value = toContributor(value)
         if oldkey == "access":
-            value = {"email": value["access_contact_email"],
-                     "status": value["status"]}
+            value = [{"email": value["access_contact_email"],
+                      "status": value["status"].capitalize()}]
         if oldkey == "identifier":
             value = {"identifier": value,
                      "identifierType": "DANDI"}
