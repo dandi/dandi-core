@@ -3,6 +3,14 @@
   "description": "A body of structured information describing a DANDI dataset\n    ",
   "type": "object",
   "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
     "schemaVersion": {
       "title": "Schemaversion",
       "default": "0.0.0",
@@ -12,19 +20,21 @@
     "identifier": {
       "title": "Identifier",
       "readonly": true,
-      "allOf": [
+      "anyOf": [
         {
-          "$ref": "#/definitions/Identifier"
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Identifier"
+            }
+          ]
         }
       ]
-    },
-    "name": {
-      "title": "Name",
-      "type": "string"
-    },
-    "description": {
-      "title": "Description",
-      "type": "string"
     },
     "contributor": {
       "title": "Contributor",
@@ -68,7 +78,7 @@
       "title": "About",
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "#/definitions/About"
       }
     },
     "study_target": {
@@ -113,8 +123,8 @@
       "title": "Acknowledgement",
       "type": "string"
     },
-    "measurementTechnigue": {
-      "title": "Measurementtechnigue",
+    "measurementTechnique": {
+      "title": "Measurementtechnique",
       "readonly": true,
       "type": "array",
       "items": {
@@ -137,71 +147,19 @@
           "$ref": "#/definitions/DandisetStat"
         }
       ]
-    },
-    "version": {
-      "title": "Version",
-      "readonly": true,
-      "type": "string"
-    },
-    "datePublished": {
-      "title": "Datepublished",
-      "readonly": true,
-      "type": "string",
-      "format": "date"
-    },
-    "url": {
-      "title": "Url",
-      "readonly": true,
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 65536,
-      "format": "uri"
-    },
-    "contentSize": {
-      "title": "Contentsize",
-      "readonly": true,
-      "type": "string"
-    },
-    "repository": {
-      "title": "Repository",
-      "readonly": true,
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 65536,
-      "format": "uri"
-    },
-    "manifestLocation": {
-      "title": "Manifestlocation",
-      "readonly": true,
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 65536,
-      "format": "uri"
-    },
-    "generatedBy": {
-      "title": "Generatedby",
-      "readonly": true,
-      "type": "string"
     }
   },
   "required": [
-    "identifier",
     "name",
     "description",
+    "identifier",
     "contributor",
     "license",
     "keywords",
     "access",
-    "measurementTechnigue",
+    "measurementTechnique",
     "variableMeasured",
-    "dandisetStats",
-    "version",
-    "datePublished",
-    "url",
-    "contentSize",
-    "repository",
-    "manifestLocation",
-    "generatedBy"
+    "dandisetStats"
   ],
   "definitions": {
     "Identifier": {
@@ -229,14 +187,14 @@
             "ORCID",
             "ROR",
             "DANDI",
+            "RRID",
             "No identifier prefix"
           ],
           "type": "string"
         }
       },
       "required": [
-        "identifier",
-        "identifierType"
+        "identifier"
       ]
     },
     "Person": {
@@ -244,7 +202,21 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/Identifier"
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/Identifier"
+            }
+          ]
         },
         "name": {
           "title": "Name",
@@ -315,9 +287,7 @@
         }
       },
       "required": [
-        "identifier",
         "name",
-        "email",
         "roleName",
         "affiliation"
       ]
@@ -327,7 +297,21 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/Identifier"
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/Identifier"
+            }
+          ]
         },
         "name": {
           "title": "Name",
@@ -395,9 +379,7 @@
         }
       },
       "required": [
-        "identifier",
         "name",
-        "email",
         "roleName",
         "contactPoint"
       ]
@@ -435,19 +417,56 @@
         }
       },
       "required": [
-        "status",
-        "email",
-        "contactPoint",
-        "description",
-        "embargoedUntil"
+        "status"
       ]
+    },
+    "About": {
+      "title": "About",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/Identifier"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      }
     },
     "EthicsApproval": {
       "title": "EthicsApproval",
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/Identifier"
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/Identifier"
+            }
+          ]
         },
         "name": {
           "title": "Name",
@@ -468,7 +487,21 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/Identifier"
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/Identifier"
+            }
+          ]
         },
         "name": {
           "title": "Name",
@@ -480,10 +513,17 @@
         },
         "repository": {
           "title": "Repository",
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 65536,
-          "format": "uri"
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
         },
         "relation": {
           "title": "Relation",
@@ -571,16 +611,35 @@
             },
             {
               "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              }
             }
           ]
         },
         "valueReference": {
           "$ref": "#/definitions/PropertyValue"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "DandisetStat": {
       "title": "DandisetStat",
@@ -616,13 +675,7 @@
             "type": "string"
           }
         }
-      },
-      "required": [
-        "numberOfFiles",
-        "numberOfSubjects",
-        "dataStandard",
-        "modality"
-      ]
+      }
     }
   }
 }
