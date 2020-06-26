@@ -1,7 +1,7 @@
 from __future__ import annotations
 from enum import Enum
 from pydantic import BaseModel, Field, AnyUrl, EmailStr
-from typing import List, Union
+from typing import List, Union, Optional
 from datetime import date
 
 
@@ -88,6 +88,7 @@ class IdentifierType(str, Enum):
     orcid = "ORCID"
     ror = "ROR"
     dandi = "DANDI"
+    rrid = "RRID"
     none = "No identifier prefix"
 
 
@@ -165,7 +166,6 @@ class DandisetStat(BaseModel):
 class BaseDandiset(BaseModel):
     name: str
     description: str
-    contributor: List[Union[Person, Organization]]
 
 
 class Dandiset(BaseDandiset):
@@ -173,6 +173,8 @@ class Dandiset(BaseDandiset):
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
     identifier: Union[AnyUrl, Identifier] = Field(readonly=True)
+
+    contributor: List[Union[Person, Organization]]
 
     license: License
     keywords: List[str]
@@ -197,8 +199,8 @@ class PublishedDandiset(Dandiset):
     url: AnyUrl = Field(readonly=True)
     contentSize: str = Field(readonly=True)
     repository: AnyUrl = Field(readonly=True)
-    manifestLocation: AnyUrl = Field(readonly=True)
-    generatedBy: str = Field(readonly=True)
+    manifestLocation: Union[AnyUrl, List[AnyUrl]] = Field(readonly=True)
+    generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
