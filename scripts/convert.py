@@ -1,27 +1,28 @@
 import json
 import yaml
+import os
 
-schemav1 = "/Users/satra/software/dandi/dandi-core/assets/schema/dandiset.json"
+schemav1 = "schema/dandiset.json"
 
-mapping = {'identifier': [],
-           'name': [],
-           'description': [],
-           'contributors': ['dandi:contributor'],
-           'sponsors': ['dandi:contributor', 'dandi:Sponsor'],
-           'license': [],
-           'keywords': [],
-           'project': ['dandi:generatedBy'],
-           'conditions_studied': ['schema:about'],
-           'associated_anatomy': ['schema:about'],
-           'protocols': ['dandi:protocol'],
-           'ethicsApprovals': ['dandi:ethicsApproval'],
-           'access': ['dandi:access'],
-           'associatedData': ['dandi:relatedResource', 'dandi:IsDerivedFrom'],
-           'publications': ['dandi:relatedResource', 'dandi:IsDescribedBy'],
-           'age': ['schema:variableMeasured'],
-           'organism': ['schema:variableMeasured'],
-           'sex': ['schema:variableMeasured'],
-           'number_of_subjects': ['dandi:numberOfSubjects']
+mapping = {'identifier': ['identifier'],
+           'name': ['name'],
+           'description': ['description'],
+           'contributors': ['contributor'],
+           'sponsors': ['contributor', 'Sponsor'],
+           'license': ['license'],
+           'keywords': ['keywords'],
+           'project': ['generatedBy'],
+           'conditions_studied': ['about'],
+           'associated_anatomy': ['about'],
+           'protocols': ['protocol'],
+           'ethicsApprovals': ['ethicsApproval'],
+           'access': ['access'],
+           'associatedData': ['relatedResource', 'IsDerivedFrom'],
+           'publications': ['relatedResource', 'IsDescribedBy'],
+           'age': ['variableMeasured'],
+           'organism': ['variableMeasured'],
+           'sex': ['variableMeasured'],
+           'number_of_subjects': ['dandisetStats', 'numberOfSubjects']
            }
 
 
@@ -32,16 +33,17 @@ def toContributor(value):
     for item in value:
         contrib = {}
         if "roles" in item:
-            contrib["schema:roleName"] = [f"dandi:{val.replace(' ', '')}" for val in
+            contrib["roleName"] = [f"{val.replace(' ', '')}" for val in
                                       item["roles"]]
             del item["roles"]
         if "awardNumber" in item:
-            contrib["dandi:awardNumber"] = item["awardNumber"]
+            contrib["awardNumber"] = item["awardNumber"]
             del item["awardNumber"]
         if "orcid" in item:
-            contrib["schema:identifier"] = item["orcid"]
+            contrib["identifier"] = {"identifier": item["orcid"],
+                                     "identifierType": "ORCID"}
             del item["orcid"]
-        contrib.update(**{f"schema:{k}":v for k,v in item.items()})
+        contrib.update(**{f"{k}":v for k,v in item.items()})
         out.append(contrib)
     return out
 
@@ -63,29 +65,31 @@ def convertv1(filename):
         if oldkey in ['contributors', "sponsors"]:
             value = toContributor(value)
         if oldkey == "access":
-            value = {"schema:email": value["access_contact_email"],
-                     "dandi:status": value["status"]}
+            value = {"email": value["access_contact_email"],
+                     "status": value["status"]}
+        if oldkey == "identifier":
+            value = {"identifier": value,
+                     "identifierType": "DANDI"}
         if len(mapping[oldkey]) == 2:
             extra = mapping[oldkey][1]
-            if newkey == 'dandi:contributor':
-                extrakey = 'schema:roleName'
+            if newkey == 'contributor':
+                extrakey = 'roleName'
             if oldkey == 'sponsors':
-                extrakey = 'schema:roleName'
+                extrakey = 'roleName'
             if oldkey in ['publications', 'associatedData']:
-                extrakey = 'dandi:relation'
-                prefix = lambda x: "dandi:" if x in ["repository", "relation"] else "schema:"
+                extrakey = 'relation'
                 if not isinstance(value, list):
                     value = [value]
                 out = []
                 for item in value:
-                    out.append({prefix(k)+k:v for k,v in item.items()})
+                    out.append({k:v for k,v in item.items()})
                 value = out
             if isinstance(value, list):
                 for val in value:
                     val[extrakey] = extra
             if isinstance(value, dict):
                 value[extrakey] = extra
-        if newkey == 'schema:variableMeasured':
+        if newkey == 'variableMeasured':
             if oldkey in ["age", "sex"]:
                 vm = {"name": oldkey}
                 if oldkey == "sex":
@@ -95,7 +99,11 @@ def convertv1(filename):
                     del value["units"]
                     vm.update(**value)
             else:
-                vm = {"name": "species", "value": value}
+                newvalues = []
+                for val in value:
+                    if "species" in val:
+                        newvalues.append(val["species"])
+                vm = {"name": "species", "value": newvalues}
             value = vm
         if newkey not in newmeta:
             newmeta[newkey] = value
@@ -112,6 +120,5 @@ def convertv1(filename):
 
 
 if __name__ == "__main__":
-    filename = "/Users/satra/software/dandi/dandi-cli/tmp/dandiset_000004.json"
-    #filename = "dandiset04.json"
+    filename = "scripts/dandiset_000004.json"
     convertv1(filename)

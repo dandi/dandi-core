@@ -93,11 +93,11 @@ class IdentifierType(str, Enum):
 
 class Identifier(BaseModel):
     identifier: Union[str, AnyUrl]
-    identifierType: IdentifierType
+    identifierType: IdentifierType = None
 
 
 class Contributor(BaseModel):
-    identifier: Identifier
+    identifier: Union[str, AnyUrl, Identifier]
     name: str
     email: EmailStr
     url: AnyUrl = None
@@ -115,13 +115,13 @@ class Organization(Contributor):
 
 
 class EthicsApproval(BaseModel):
-    identifier: Identifier = None
+    identifier: Union[str, AnyUrl, Identifier] = None
     name: str
     url: str
 
 
 class Resource(BaseModel):
-    identifier: Identifier = None
+    identifier: Union[str, AnyUrl, Identifier] = None
     name: str = None
     url: str
     repository: AnyUrl = None
@@ -161,7 +161,7 @@ class Dandiset(BaseModel):
     """A body of structured information describing a DANDI dataset
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
-    identifier: Identifier = Field(readonly=True)
+    identifier: Union[AnyUrl, Identifier] = Field(readonly=True)
     name: str
     description: str
 

@@ -1,0 +1,241 @@
+about:
+- identifier: MTL
+  name: Medial Temporal Lobe
+access:
+  email: nand.chandravadia@cshs.org
+  status: open
+contributor:
+- affiliations:
+  - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  email: nand.chandravadia@cshs.org
+  identifier:
+    identifier: 0000-0003-0161-4007
+    identifierType: ORCID
+  name: Nand Chandravadia
+  roleName:
+  - Author
+  - ContactPerson
+  - DataCurator
+  - DataManager
+  - FormalAnalysis
+  - Investigation
+  - Maintainer
+  - Methodology
+  - ProjectLeader
+  - ProjectManager
+  - ProjectMember
+  - Researcher
+  - Software
+  - Validation
+  - Visualization
+- affiliations:
+  - Institute for Interdisciplinary Brain and Behavioral Sciences, Crean College of
+    Health and Behavioral Sciences, Schmid College of Science and Technology, Chapman
+    University, Orange, CA, USA
+  email: liang134@mail.chapman.edu
+  identifier:
+    identifier: ''
+    identifierType: ORCID
+  name: Dehua Liang
+  roleName:
+  - Author
+  - Methodology
+  - ProjectMember
+  - Software
+  - Validation
+- affiliations:
+  - Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada
+  email: Andrea.Schjetan@uhnresearch.ca
+  identifier:
+    identifier: 0000-0002-4319-7689
+    identifierType: ORCID
+  name: Andrea Gomez Palacio Schjetnan
+  roleName:
+  - Author
+  - DataCollector
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  email: april.carlson@tufts.edu
+  identifier:
+    identifier: 0000-0002-9207-7069
+    identifierType: ORCID
+  name: April Carlson
+  roleName:
+  - Author
+  - DataCurator
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  email: mailyscm.faraut@gmail.com
+  name: Mailys Faraut
+  roleName:
+  - Author
+  - DataCollector
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  email: Jeffrey.Chung@cshs.org
+  name: Jeffrey M. Chung
+  roleName:
+  - Author
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  email: Chrystal.Reed@csmc.edu
+  name: Chrystal M. Reed
+  roleName:
+  - Author
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Biological Systems & Engineering Division, Lawrence Berkeley National Laboratory,
+    Berkeley, CA, USA
+  - Department of Neurosurgery, Stanford University, Stanford, CA, USA
+  email: ben.dichter@gmail.com
+  name: Ben Dichter
+  roleName:
+  - Author
+  - Software
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Institute for Interdisciplinary Brain and Behavioral Sciences, Crean College of
+    Health and Behavioral Sciences, Schmid College of Science and Technology, Chapman
+    University, Orange, CA, USA
+  - Division of Biology and Biological Engineering, California Institute of Technology,
+    Pasadena, CA, USA
+  email: maoz.uri@gmail.com
+  name: Uri Maoz
+  roleName:
+  - Author
+  - Conceptualization
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto,
+    Canada
+  - Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada
+  email: suneil.kalia@uhn.ca
+  name: Suneil K. Kalia
+  roleName:
+  - Author
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada
+  - Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto,
+    Canada
+  email: Taufik.Valiante@uhn.ca
+  name: Taufik A. Valiante
+  roleName:
+  - Author
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  email: Adam.Mamelak@cshs.org
+  name: Adam N. Mamelak
+  roleName:
+  - Author
+  - ProjectMember
+  - Validation
+- affiliations:
+  - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  - Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA
+  - Division of Biology and Biological Engineering, California Institute of Technology,
+    Pasadena, CA, USA
+  - Computational and Neural Systems Program, California Institute of Technology,
+    Pasadena, CA, USA
+  - Center for Neural Science and Medicine, Department of Biomedical Science, Cedars-Sinai
+    Medical Center, Los Angeles, CA, USA
+  email: Ueli.Rutishauser@cshs.org
+  identifier:
+    identifier: 0000-0002-9207-7069
+    identifierType: ORCID
+  name: Ueli Rutishauser
+  roleName:
+  - Author
+  - Conceptualization
+  - Fundingacquisition
+  - ProjectMember
+  - Resources
+  - Software
+  - Supervision
+  - Validation
+- awardNumber: U01NS103792
+  name: National Institute of Neurological Disorders and Stroke
+  roleName: Sponsor
+- awardNumber: '1554105'
+  name: National Science Foundation
+  roleName: Sponsor
+- awardNumber: R01MH110831
+  name: National Institute of Mental Health
+  roleName: Sponsor
+- name: McKnight Endowment for Neuroscience
+  roleName: Sponsor
+- name: NARSAD Young Investigator grant from the Brain & Behavior Research Foundation
+  roleName: Sponsor
+- name: Kavli Foundation
+  roleName: Sponsor
+- awardNumber: U19NS104590
+  name: BRAIN initiative
+  roleName: Sponsor
+dandisetStats: 59
+description: 'A challenge for data sharing in systems neuroscience is the multitude
+  of different data formats used. Neurodata Without Borders: Neurophysiology 2.0 (NWB:N)
+  has emerged as a standardized data format for the storage of cellular-level data
+  together with meta-data, stimulus information, and behavior. A key next step to
+  facilitate NWB:N adoption is to provide easy to use processing pipelines to import/export
+  data from/to NWB:N. Here, we present a NWB-formatted dataset of 1863 single neurons
+  recorded from the medial temporal lobes of 59 human subjects undergoing intracranial
+  monitoring while they performed a recognition memory task. We provide code to analyze
+  and export/import stimuli, behavior, and electrophysiological recordings to/from
+  NWB in both MATLAB and Python. The data files are NWB:N compliant, which affords
+  interoperability between programming languages and operating systems. This combined
+  data and code release is a case study for how to utilize NWB:N for human single-neuron
+  recordings and enables easy re-use of this hard-to-obtain data for both teaching
+  and research on the mechanisms of human memory.'
+identifier:
+  identifier: '000004'
+  identifierType: DANDI
+keywords:
+- cognitive neuroscience
+- data standardization
+- decision making
+- declarative memory
+- neurophysiology
+- neurosurgery
+- NWB
+- open source
+- single-neurons
+license: CC-BY-4.0
+name: A NWB-based dataset and processing pipeline of human single-neuron activity
+  during a declarative memory task
+relatedResource:
+- identifier: DOI:10.17605/OSF.IO/HV7JA
+  name: A NWB-based Dataset and Processing Pipeline of Human Single-Neuron Activity
+    During a Declarative Memory Task
+  relation: IsDerivedFrom
+  repository: Open Science Framework
+  url: https://osf.io/hv7ja/
+- identifier: DOI:10.1038/s41597-020-0415-9
+  relation: IsDescribedBy
+  url: https://www.nature.com/articles/s41597-020-0415-9
+variableMeasured:
+- maximum: '70'
+  minimum: '16'
+  name: age
+  unitText: Year
+- name: species
+  value:
+  - Homo sapiens
+- name: sex
+  value:
+  - F
+  - M
+
