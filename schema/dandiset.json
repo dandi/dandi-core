@@ -1,0 +1,610 @@
+{
+  "title": "Dandiset",
+  "description": "A body of structured information describing a DANDI dataset\n    ",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "identifier": {
+      "$ref": "#/definitions/Identifier"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "contributor": {
+      "title": "Contributor",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Person"
+          },
+          {
+            "$ref": "#/definitions/Organization"
+          }
+        ]
+      }
+    },
+    "license": {
+      "title": "License",
+      "enum": [
+        "CC0-1.0",
+        "CC-BY-4.0",
+        "CC-BY-NC-4.0",
+        "PDDL-1.0"
+      ],
+      "type": "string"
+    },
+    "keywords": {
+      "title": "Keywords",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "access": {
+      "title": "Access",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "about": {
+      "title": "About",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "study_target": {
+      "title": "Study Target",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 65536,
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    "protocol": {
+      "title": "Protocol",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ethicsApproval": {
+      "title": "Ethicsapproval",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EthicsApproval"
+      }
+    },
+    "relatedResource": {
+      "title": "Relatedresource",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "acknowledgement": {
+      "title": "Acknowledgement",
+      "type": "string"
+    },
+    "measurementTechnigue": {
+      "title": "Measurementtechnigue",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "variableMeasured": {
+      "title": "Variablemeasured",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PropertyValue"
+      }
+    },
+    "dandisetStats": {
+      "$ref": "#/definitions/DandisetStat"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "datePublished": {
+      "title": "Datepublished",
+      "type": "string",
+      "format": "date"
+    },
+    "url": {
+      "title": "Url",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "contentSize": {
+      "title": "Contentsize",
+      "type": "string"
+    },
+    "repository": {
+      "title": "Repository",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "manifestLocation": {
+      "title": "Manifestlocation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "generatedBy": {
+      "title": "Generatedby",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "identifier",
+    "name",
+    "description",
+    "contributor",
+    "license",
+    "keywords",
+    "access",
+    "measurementTechnigue",
+    "variableMeasured",
+    "dandisetStats",
+    "version",
+    "datePublished",
+    "url",
+    "contentSize",
+    "repository",
+    "manifestLocation",
+    "generatedBy"
+  ],
+  "definitions": {
+    "Identifier": {
+      "title": "Identifier",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "identifierType": {
+          "title": "Identifiertype",
+          "enum": [
+            "DOI",
+            "ORCID",
+            "ROR",
+            "DANDI",
+            "No identifier prefix"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "identifierType"
+      ]
+    },
+    "Person": {
+      "title": "Person",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "roleName": {
+          "title": "Rolename",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Author",
+              "Conceptualization",
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "FormalAnalysis",
+              "FundingAcquisition",
+              "Investigation",
+              "Maintainer",
+              "Methodology",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "ProjectAdministration",
+              "Researcher",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Funder",
+              "Sponsor",
+              "StudyParticipant",
+              "Other"
+            ],
+            "type": "string"
+          }
+        },
+        "includeInCitation": {
+          "title": "Includeincitation",
+          "default": true,
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Awardnumber",
+          "type": "string"
+        },
+        "affiliation": {
+          "title": "Affiliation",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "identifier",
+        "name",
+        "email",
+        "roleName",
+        "affiliation"
+      ]
+    },
+    "Organization": {
+      "title": "Organization",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "roleName": {
+          "title": "Rolename",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Author",
+              "Conceptualization",
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "FormalAnalysis",
+              "FundingAcquisition",
+              "Investigation",
+              "Maintainer",
+              "Methodology",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "ProjectAdministration",
+              "Researcher",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Funder",
+              "Sponsor",
+              "StudyParticipant",
+              "Other"
+            ],
+            "type": "string"
+          }
+        },
+        "includeInCitation": {
+          "title": "Includeincitation",
+          "default": true,
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Awardnumber",
+          "type": "string"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "name",
+        "email",
+        "roleName",
+        "contactPoint"
+      ]
+    },
+    "AccessRequirements": {
+      "title": "AccessRequirements",
+      "type": "object",
+      "properties": {
+        "status": {
+          "title": "Status",
+          "enum": [
+            "Open",
+            "Embargoed",
+            "Restricted"
+          ],
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "embargoedUntil": {
+          "title": "Embargoeduntil",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "status",
+        "email",
+        "contactPoint",
+        "description",
+        "embargoedUntil"
+      ]
+    },
+    "EthicsApproval": {
+      "title": "EthicsApproval",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "name",
+        "url"
+      ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Repository",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "relation": {
+          "title": "Relation",
+          "enum": [
+            "IsCitedBy",
+            "Cites",
+            "IsSupplementTo",
+            "IsSupplementedBy",
+            "IsContinuedBy",
+            "Continues",
+            "Describes",
+            "IsDescribedBy",
+            "HasMetadata",
+            "IsMetadataFor",
+            "HasVersion",
+            "IsVersionOf",
+            "IsNewVersionOf",
+            "IsPreviousVersionOf",
+            "IsPartOf",
+            "HasPart",
+            "IsReferencedBy",
+            "References",
+            "IsDocumentedBy",
+            "Documents",
+            "IsCompiledBy",
+            "Compiles",
+            "IsVariantFormOf",
+            "IsOriginalFormOf",
+            "IsIdenticalTo",
+            "IsReviewedBy",
+            "Reviews",
+            "IsDerivedFrom",
+            "IsSourceOf",
+            "IsRequiredBy",
+            "Requires",
+            "Obsoletes",
+            "IsObsoletedBy"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "name",
+        "url",
+        "repository",
+        "relation"
+      ]
+    },
+    "PropertyValue": {
+      "title": "PropertyValue",
+      "type": "object",
+      "properties": {
+        "maxValue": {
+          "title": "Maxvalue",
+          "type": "number"
+        },
+        "minValue": {
+          "title": "Minvalue",
+          "type": "number"
+        },
+        "unitCode": {
+          "title": "Unitcode",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "unitText": {
+          "title": "Unittext",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "valueReference": {
+          "$ref": "#/definitions/PropertyValue"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "DandisetStat": {
+      "title": "DandisetStat",
+      "type": "object",
+      "properties": {
+        "numberOfFiles": {
+          "title": "Numberoffiles",
+          "type": "integer"
+        },
+        "numberOfSubjects": {
+          "title": "Numberofsubjects",
+          "type": "integer"
+        },
+        "numberOfSamples": {
+          "title": "Numberofsamples",
+          "type": "integer"
+        },
+        "numberOfCells": {
+          "title": "Numberofcells",
+          "type": "integer"
+        },
+        "dataStandard": {
+          "title": "Datastandard",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "modality": {
+          "title": "Modality",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "numberOfFiles",
+        "numberOfSubjects",
+        "dataStandard",
+        "modality"
+      ]
+    }
+  }
+}

@@ -83,37 +83,45 @@ class Relation(str, Enum):
     IsObsoletedBy = "IsObsoletedBy"
 
 
-class Person(BaseModel):
-    identifier: str
-    sameAs: AnyUrl
-    name: str
-    email: EmailStr
-    affiliation: List[str]
+class IdentifierType(str, Enum):
+    doi = "DOI"
+    orcid = "ORCID"
+    ror = "ROR"
+    dandi = "DANDI"
+    none = "No identifier prefix"
 
 
-class Organization(BaseModel):
-    identifier: str
-    sameAs: AnyUrl
-    name: str
-    email: EmailStr
-    contactPoint: str
+class Identifier(BaseModel):
+    identifier: Union[str, AnyUrl]
+    identifierType: IdentifierType
 
 
 class Contributor(BaseModel):
-    identifier: Union[Person, Organization]
+    identifier: Identifier
+    name: str
+    email: EmailStr
+    url: AnyUrl = None
     roleName: List[RoleType]
+    includeInCitation: bool = True
     awardNumber: str = None
-    schemaVersion: str
+
+
+class Person(Contributor):
+    affiliation: List[str]
+
+
+class Organization(Contributor):
+    contactPoint: str
 
 
 class EthicsApproval(BaseModel):
-    identifier: str
+    identifier: Identifier
     name: str
     url: str
 
 
 class Resource(BaseModel):
-    identifier: str
+    identifier: Identifier
     name: str
     url: str
     repository: AnyUrl
@@ -157,37 +165,35 @@ class Dandiset(BaseModel):
     """A body of structured information describing a DANDI dataset
     """
     schemaVersion: str
-    identifier: str
+    identifier: Identifier
     name: str
     description: str
 
-    citationOrder: List[int]
-    contributor: List[Contributor]
+    contributor: List[Union[Person, Organization]]
 
-    license: License = Field(...)
+    license: License
     keywords: List[str]
+    access: List[AccessRequirements]
     about: List[str] = None
-    study_target: List[Union[str, AnyUrl]]
+    study_target: List[Union[str, AnyUrl]] = None
     protocol: List[str] = None
     ethicsApproval: List[EthicsApproval] = None
-    access: List[AccessRequirements]
     relatedResource: List[Resource] = None
     acknowledgement: str = None
 
-    version: str
+    # From assets
+    measurementTechnigue: List[str]
+    variableMeasured: List[PropertyValue]
+    dandisetStats: DandisetStat
 
-    distribution: List[DataDownload]
+    # On publish
+    version: str
     datePublished: date
     url: AnyUrl
     contentSize: str
     repository: AnyUrl
-    hasAssets: AnyUrl
-
+    manifestLocation: AnyUrl
     generatedBy: str
-
-    measurementTechnigue: List[str] = None
-    variableMeasured: List[PropertyValue] = None
-    dandisetStats: DandisetStat
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
