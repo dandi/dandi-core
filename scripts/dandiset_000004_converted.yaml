@@ -185,7 +185,8 @@ contributor:
 - awardNumber: U19NS104590
   name: BRAIN initiative
   roleName: Sponsor
-dandisetStats: 59
+dandisetStats:
+  numberOfSubjects: 59
 description: 'A challenge for data sharing in systems neuroscience is the multitude
   of different data formats used. Neurodata Without Borders: Neurophysiology 2.0 (NWB:N)
   has emerged as a standardized data format for the storage of cellular-level data
@@ -227,8 +228,8 @@ relatedResource:
   relation: IsDescribedBy
   url: https://www.nature.com/articles/s41597-020-0415-9
 variableMeasured:
-- maximum: '70'
-  minimum: '16'
+- maximum: 70
+  minimum: 16
   name: age
   unitText: Year
 - name: species
@@ -238,4 +239,3 @@ variableMeasured:
   value:
   - F
   - M
-

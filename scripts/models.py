@@ -97,9 +97,9 @@ class Identifier(BaseModel):
 
 
 class Contributor(BaseModel):
-    identifier: Union[str, AnyUrl, Identifier]
-    name: str
-    email: EmailStr
+    identifier: Union[str, AnyUrl, Identifier] = None
+    name: str = None
+    email: EmailStr = None
     url: AnyUrl = None
     roleName: List[RoleType]
     includeInCitation: bool = True
@@ -107,7 +107,7 @@ class Contributor(BaseModel):
 
 
 class Person(Contributor):
-    affiliation: List[str]
+    affiliation: List[str] = None
 
 
 class Organization(Contributor):
@@ -141,7 +141,7 @@ class PropertyValue(BaseModel):
     minValue: float = None
     unitCode: Union[str, AnyUrl] = None
     unitText: str = None
-    value: Union[bool, float, str]
+    value: Union[bool, float, str, int, List[Union[bool, float, str, int]]] = None
     valueReference: PropertyValue = None
 
 
@@ -149,12 +149,12 @@ PropertyValue.update_forward_refs()
 
 
 class DandisetStat(BaseModel):
-    numberOfFiles: int
-    numberOfSubjects: int
+    numberOfFiles: int = None
+    numberOfSubjects: int = None
     numberOfSamples: int = None
     numberOfCells: int = None
-    dataStandard: List[str]
-    modality: List[str]
+    dataStandard: List[str] = None
+    modality: List[str] = None
 
 
 class Dandiset(BaseModel):
@@ -178,19 +178,20 @@ class Dandiset(BaseModel):
     acknowledgement: str = None
 
     # From assets
-    measurementTechnigue: List[str] = Field(readonly=True)
+    measurementTechnique: List[str] = Field(None, readonly=True)
     variableMeasured: List[PropertyValue] = Field(readonly=True)
-    dandisetStats: DandisetStat = Field(readonly=True)
+    dandisetStats: DandisetStat = Field(None, readonly=True)
 
     # On publish
-    version: str = Field(readonly=True)
-    datePublished: date = Field(readonly=True)
-    url: AnyUrl = Field(readonly=True)
-    contentSize: str = Field(readonly=True)
-    repository: AnyUrl = Field(readonly=True)
-    manifestLocation: AnyUrl = Field(readonly=True)
-    generatedBy: str = Field(readonly=True)
+    version: str = Field(None, readonly=True)
+    datePublished: date = Field(None, readonly=True)
+    url: AnyUrl = Field(None, readonly=True)
+    contentSize: str = Field(None, readonly=True)
+    repository: AnyUrl = Field(None, readonly=True)
+    manifestLocation: AnyUrl = Field(None, readonly=True)
+    generatedBy: str = Field(None, readonly=True)
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
-print(Dandiset.schema_json(indent=2))
+if __name__ == "__main__":
+    print(Dandiset.schema_json(indent=2))

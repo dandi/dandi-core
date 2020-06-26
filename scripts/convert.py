@@ -84,17 +84,26 @@ def convertv1(filename):
                 for item in value:
                     out.append({k:v for k,v in item.items()})
                 value = out
+            if oldkey == 'number_of_subjects':
+                value = {extra: value}
+                extrakey = None
             if isinstance(value, list):
                 for val in value:
-                    val[extrakey] = extra
+                    if extrakey:
+                        val[extrakey] = extra
             if isinstance(value, dict):
-                value[extrakey] = extra
+                if extrakey:
+                    value[extrakey] = extra
         if newkey == 'variableMeasured':
             if oldkey in ["age", "sex"]:
                 vm = {"name": oldkey}
                 if oldkey == "sex":
                     vm["value"] = value
                 else:
+                    if "maximum" in value:
+                        value["maximum"] = int(value["maximum"])
+                    if "minimum" in value:
+                        value["minimum"] = int(value["minimum"])
                     value["unitText"] = value["units"]
                     del value["units"]
                     vm.update(**value)
@@ -114,11 +123,16 @@ def convertv1(filename):
             if not isinstance(value, list):
                 value = [value]
             newmeta[newkey].extend(value)
-    print(yaml.dump(newmeta, indent=2,
-                    default_flow_style=False))
+    with open(filename.replace(".json", "_converted.yaml"), "wt") as fp:
+        yaml.dump(newmeta, fp, indent=2,
+                  default_flow_style=False)
     return newmeta
 
 
 if __name__ == "__main__":
     filename = "scripts/dandiset_000004.json"
-    convertv1(filename)
+    newmeta = convertv1(filename)
+
+    # validate via the model
+    from models import Dandiset
+    data = Dandiset(**newmeta)
