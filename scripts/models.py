@@ -98,7 +98,7 @@ class Identifier(BaseModel):
 
 class Contributor(BaseModel):
     identifier: Union[str, AnyUrl, Identifier] = None
-    name: str = None
+    name: str
     email: EmailStr = None
     url: AnyUrl = None
     roleName: List[RoleType]
@@ -107,11 +107,11 @@ class Contributor(BaseModel):
 
 
 class Person(Contributor):
-    affiliation: List[str] = None
+    affiliation: List[str]
 
 
 class Organization(Contributor):
-    contactPoint: str = None
+    contactPoint: str
 
 
 class EthicsApproval(BaseModel):
@@ -162,15 +162,17 @@ class DandisetStat(BaseModel):
     modality: List[str] = None
 
 
-class Dandiset(BaseModel):
+class BaseDandiset(BaseModel):
+    name: str
+    description: str
+    contributor: List[Union[Person, Organization]]
+
+
+class Dandiset(BaseDandiset):
     """A body of structured information describing a DANDI dataset
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
     identifier: Union[AnyUrl, Identifier] = Field(readonly=True)
-    name: str
-    description: str
-
-    contributor: List[Union[Person, Organization]]
 
     license: License
     keywords: List[str]
@@ -183,18 +185,20 @@ class Dandiset(BaseModel):
     acknowledgement: str = None
 
     # From assets
-    measurementTechnique: List[str] = Field(None, readonly=True)
+    measurementTechnique: List[str] = Field(readonly=True)
     variableMeasured: List[PropertyValue] = Field(readonly=True)
-    dandisetStats: DandisetStat = Field(None, readonly=True)
+    dandisetStats: DandisetStat = Field(readonly=True)
 
+
+class PublishedDandiset(Dandiset):
     # On publish
-    version: str = Field(None, readonly=True)
-    datePublished: date = Field(None, readonly=True)
-    url: AnyUrl = Field(None, readonly=True)
-    contentSize: str = Field(None, readonly=True)
-    repository: AnyUrl = Field(None, readonly=True)
-    manifestLocation: AnyUrl = Field(None, readonly=True)
-    generatedBy: str = Field(None, readonly=True)
+    version: str = Field(readonly=True)
+    datePublished: date = Field(readonly=True)
+    url: AnyUrl = Field(readonly=True)
+    contentSize: str = Field(readonly=True)
+    repository: AnyUrl = Field(readonly=True)
+    manifestLocation: AnyUrl = Field(readonly=True)
+    generatedBy: str = Field(readonly=True)
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
