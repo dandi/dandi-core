@@ -165,7 +165,12 @@ class DandisetStat(BaseModel):
 
 class Digest(BaseModel):
     value: str
-    cryptoType: str
+    cryptoType: AnyUrl
+
+
+class BioSample(BaseModel):
+    assayType: AnyUrl
+    anatomy: AnyUrl
 
 
 class BaseDandiset(BaseModel):
@@ -230,6 +235,7 @@ class Asset(BaseModel):
 
     isPartOf: Identifier = None
     generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
+    wasDerivedFrom: BioSample = None
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
