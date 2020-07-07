@@ -240,4 +240,5 @@ class Asset(BaseModel):
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
 if __name__ == "__main__":
-    print(Dandiset.schema_json(indent=2))
+    #print(Dandiset.schema_json(indent=2))
+    print(Asset.schema_json(indent=2))

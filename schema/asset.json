@@ -1,0 +1,411 @@
+{
+  "title": "Asset",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "title": "Schemaversion",
+      "default": "0.0.0",
+      "readonly": true,
+      "type": "string"
+    },
+    "identifier": {
+      "title": "Identifier",
+      "readonly": true,
+      "allOf": [
+        {
+          "$ref": "#/definitions/Identifier"
+        }
+      ]
+    },
+    "contentUrl": {
+      "title": "Contenturl",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 65536,
+        "format": "uri"
+      }
+    },
+    "contentSize": {
+      "title": "Contentsize",
+      "type": "string"
+    },
+    "encodingFormat": {
+      "title": "Encodingformat",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      ]
+    },
+    "digest": {
+      "$ref": "#/definitions/Digest"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "datePublished": {
+      "title": "Datepublished",
+      "type": "string",
+      "format": "date"
+    },
+    "dataType": {
+      "title": "Datatype",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "path": {
+      "title": "Path",
+      "type": "string"
+    },
+    "sameAs": {
+      "title": "Sameas",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "access": {
+      "title": "Access",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "relatedResource": {
+      "title": "Relatedresource",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "modality": {
+      "title": "Modality",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "measurementTechnique": {
+      "title": "Measurementtechnique",
+      "readonly": true,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "variableMeasured": {
+      "title": "Variablemeasured",
+      "readonly": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PropertyValue"
+      }
+    },
+    "isPartOf": {
+      "$ref": "#/definitions/Identifier"
+    },
+    "generatedBy": {
+      "title": "Generatedby",
+      "readonly": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "wasDerivedFrom": {
+      "$ref": "#/definitions/BioSample"
+    }
+  },
+  "required": [
+    "identifier",
+    "contentUrl",
+    "contentSize",
+    "encodingFormat",
+    "digest",
+    "name",
+    "datePublished",
+    "dataType",
+    "access",
+    "measurementTechnique",
+    "variableMeasured"
+  ],
+  "definitions": {
+    "PropertyValue": {
+      "title": "PropertyValue",
+      "type": "object",
+      "properties": {
+        "maxValue": {
+          "title": "Maxvalue",
+          "type": "number"
+        },
+        "minValue": {
+          "title": "Minvalue",
+          "type": "number"
+        },
+        "unitCode": {
+          "title": "Unitcode",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "unitText": {
+          "title": "Unittext",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "valueReference": {
+          "$ref": "#/definitions/PropertyValue"
+        },
+        "propertyID": {
+          "title": "Propertyid",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        }
+      }
+    },
+    "Identifier": {
+      "title": "Identifier",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
+    "Digest": {
+      "title": "Digest",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "cryptoType": {
+          "title": "Cryptotype",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      },
+      "required": [
+        "value",
+        "cryptoType"
+      ]
+    },
+    "AccessRequirements": {
+      "title": "AccessRequirements",
+      "type": "object",
+      "properties": {
+        "status": {
+          "title": "Status",
+          "enum": [
+            "Open",
+            "Embargoed",
+            "Restricted"
+          ],
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "embargoedUntil": {
+          "title": "Embargoeduntil",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Repository",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "relation": {
+          "title": "Relation",
+          "enum": [
+            "IsCitedBy",
+            "Cites",
+            "IsSupplementTo",
+            "IsSupplementedBy",
+            "IsContinuedBy",
+            "Continues",
+            "Describes",
+            "IsDescribedBy",
+            "HasMetadata",
+            "IsMetadataFor",
+            "HasVersion",
+            "IsVersionOf",
+            "IsNewVersionOf",
+            "IsPreviousVersionOf",
+            "IsPartOf",
+            "HasPart",
+            "IsReferencedBy",
+            "References",
+            "IsDocumentedBy",
+            "Documents",
+            "IsCompiledBy",
+            "Compiles",
+            "IsVariantFormOf",
+            "IsOriginalFormOf",
+            "IsIdenticalTo",
+            "IsReviewedBy",
+            "Reviews",
+            "IsDerivedFrom",
+            "IsSourceOf",
+            "IsRequiredBy",
+            "Requires",
+            "Obsoletes",
+            "IsObsoletedBy"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "relation"
+      ]
+    },
+    "BioSample": {
+      "title": "BioSample",
+      "type": "object",
+      "properties": {
+        "assayType": {
+          "title": "Assaytype",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "anatomy": {
+          "title": "Anatomy",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      },
+      "required": [
+        "assayType",
+        "anatomy"
+      ]
+    }
+  }
+}
