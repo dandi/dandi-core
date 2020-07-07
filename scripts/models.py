@@ -211,7 +211,7 @@ class PublishedDandiset(Dandiset):
 class Asset(BaseModel):
     schemaVersion: str = Field(default="0.0.0", readonly=True)
     identifier: Identifier = Field(readonly=True)
-    contentUrl: AnyUrl
+    contentUrl: List[AnyUrl]
     contentSize: str
     encodingFormat: Union[str, AnyUrl]
     digest: Digest
