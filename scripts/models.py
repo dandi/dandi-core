@@ -92,13 +92,25 @@ class IdentifierType(str, Enum):
     none = "No identifier prefix"
 
 
+class PropertyValue(BaseModel):
+    maxValue: float = None
+    minValue: float = None
+    unitCode: Union[str, AnyUrl] = None
+    unitText: str = None
+    value: Union[bool, float, str, int, List[Union[bool, float, str, int]]] = None
+    valueReference: PropertyValue = None
+    propertyID: Union[str, AnyUrl] = None
+
+
+PropertyValue.update_forward_refs()
+
+
 class Identifier(BaseModel):
-    identifier: Union[str, AnyUrl]
-    identifierType: IdentifierType = None
+    identifier: Union[str, AnyUrl, PropertyValue]
 
 
 class Contributor(BaseModel):
-    identifier: Union[str, AnyUrl, Identifier] = None
+    identifier: Identifier = None
     name: str
     email: EmailStr = None
     url: AnyUrl = None
@@ -122,7 +134,7 @@ class EthicsApproval(BaseModel):
 
 
 class Resource(BaseModel):
-    identifier: Union[str, AnyUrl, Identifier] = None
+    identifier: Identifier = None
     name: str = None
     url: str
     repository: Union[str, AnyUrl] = None
@@ -142,18 +154,6 @@ class AccessRequirements(BaseModel):
     embargoedUntil: date = None
 
 
-class PropertyValue(BaseModel):
-    maxValue: float = None
-    minValue: float = None
-    unitCode: Union[str, AnyUrl] = None
-    unitText: str = None
-    value: Union[bool, float, str, int, List[Union[bool, float, str, int]]] = None
-    valueReference: PropertyValue = None
-
-
-PropertyValue.update_forward_refs()
-
-
 class DandisetStat(BaseModel):
     numberOfFiles: int = None
     numberOfSubjects: int = None
@@ -161,6 +161,11 @@ class DandisetStat(BaseModel):
     numberOfCells: int = None
     dataStandard: List[str] = None
     modality: List[str] = None
+
+
+class Digest(BaseModel):
+    value: str
+    cryptoType: str
 
 
 class BaseDandiset(BaseModel):
@@ -172,7 +177,7 @@ class Dandiset(BaseDandiset):
     """A body of structured information describing a DANDI dataset
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
-    identifier: Union[AnyUrl, Identifier] = Field(readonly=True)
+    identifier: Identifier = Field(readonly=True)
 
     contributor: List[Union[Person, Organization]]
 
@@ -200,6 +205,30 @@ class PublishedDandiset(Dandiset):
     contentSize: str = Field(readonly=True)
     repository: AnyUrl = Field(readonly=True)
     manifestLocation: Union[AnyUrl, List[AnyUrl]] = Field(readonly=True)
+    generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
+
+
+class Asset(BaseModel):
+    schemaVersion: str = Field(default="0.0.0", readonly=True)
+    identifier: Identifier = Field(readonly=True)
+    contentUrl: AnyUrl
+    contentSize: str
+    encodingFormat: Union[str, AnyUrl]
+    digest: Digest
+    name: str
+    datePublished: date
+    dataType: AnyUrl
+
+    path: str = None
+
+    sameAs: AnyUrl = None
+    access: List[AccessRequirements]
+    relatedResource: List[Resource] = None
+    modality: List[str] = None
+    measurementTechnique: List[str] = Field(readonly=True)
+    variableMeasured: List[PropertyValue] = Field(readonly=True)
+
+    isPartOf: Identifier = None
     generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
 
 

@@ -20,19 +20,9 @@
     "identifier": {
       "title": "Identifier",
       "readonly": true,
-      "anyOf": [
+      "allOf": [
         {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 65536,
-          "format": "uri"
-        },
-        {
-          "allOf": [
-            {
-              "$ref": "#/definitions/Identifier"
-            }
-          ]
+          "$ref": "#/definitions/Identifier"
         }
       ]
     },
@@ -162,6 +152,91 @@
     "dandisetStats"
   ],
   "definitions": {
+    "PropertyValue": {
+      "title": "PropertyValue",
+      "type": "object",
+      "properties": {
+        "maxValue": {
+          "title": "Maxvalue",
+          "type": "number"
+        },
+        "minValue": {
+          "title": "Minvalue",
+          "type": "number"
+        },
+        "unitCode": {
+          "title": "Unitcode",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "unitText": {
+          "title": "Unittext",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "valueReference": {
+          "$ref": "#/definitions/PropertyValue"
+        },
+        "propertyID": {
+          "title": "Propertyid",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        }
+      }
+    },
     "Identifier": {
       "title": "Identifier",
       "type": "object",
@@ -177,20 +252,11 @@
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
             }
           ]
-        },
-        "identifierType": {
-          "title": "Identifiertype",
-          "enum": [
-            "DOI",
-            "ORCID",
-            "ROR",
-            "DANDI",
-            "RRID",
-            "No identifier prefix"
-          ],
-          "type": "string"
         }
       },
       "required": [
@@ -202,21 +268,7 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/Identifier"
-            }
-          ]
+          "$ref": "#/definitions/Identifier"
         },
         "name": {
           "title": "Name",
@@ -297,21 +349,7 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/Identifier"
-            }
-          ]
+          "$ref": "#/definitions/Identifier"
         },
         "name": {
           "title": "Name",
@@ -487,21 +525,7 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/Identifier"
-            }
-          ]
+          "$ref": "#/definitions/Identifier"
         },
         "name": {
           "title": "Name",
@@ -569,77 +593,6 @@
         "url",
         "relation"
       ]
-    },
-    "PropertyValue": {
-      "title": "PropertyValue",
-      "type": "object",
-      "properties": {
-        "maxValue": {
-          "title": "Maxvalue",
-          "type": "number"
-        },
-        "minValue": {
-          "title": "Minvalue",
-          "type": "number"
-        },
-        "unitCode": {
-          "title": "Unitcode",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            }
-          ]
-        },
-        "unitText": {
-          "title": "Unittext",
-          "type": "string"
-        },
-        "value": {
-          "title": "Value",
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "integer"
-            },
-            {
-              "type": "array",
-              "items": {
-                "anyOf": [
-                  {
-                    "type": "boolean"
-                  },
-                  {
-                    "type": "number"
-                  },
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "integer"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        "valueReference": {
-          "$ref": "#/definitions/PropertyValue"
-        }
-      }
     },
     "DandisetStat": {
       "title": "DandisetStat",
