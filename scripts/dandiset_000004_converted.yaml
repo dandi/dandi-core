@@ -9,8 +9,9 @@ contributor:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: nand.chandravadia@cshs.org
   identifier:
-    identifier: 0000-0003-0161-4007
-    identifierType: ORCID
+    '@type': schema:PropertyValue
+    propertyID: ORCID
+    value: 0000-0003-0161-4007
   name: Nand Chandravadia
   roleName:
   - Author
@@ -33,9 +34,7 @@ contributor:
     Health and Behavioral Sciences, Schmid College of Science and Technology, Chapman
     University, Orange, CA, USA
   email: liang134@mail.chapman.edu
-  identifier:
-    identifier: ''
-    identifierType: ORCID
+  identifier: ''
   name: Dehua Liang
   roleName:
   - Author
@@ -47,8 +46,9 @@ contributor:
   - Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada
   email: Andrea.Schjetan@uhnresearch.ca
   identifier:
-    identifier: 0000-0002-4319-7689
-    identifierType: ORCID
+    '@type': schema:PropertyValue
+    propertyID: ORCID
+    value: 0000-0002-4319-7689
   name: Andrea Gomez Palacio Schjetnan
   roleName:
   - Author
@@ -59,8 +59,9 @@ contributor:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: april.carlson@tufts.edu
   identifier:
-    identifier: 0000-0002-9207-7069
-    identifierType: ORCID
+    '@type': schema:PropertyValue
+    propertyID: ORCID
+    value: 0000-0002-9207-7069
   name: April Carlson
   roleName:
   - Author
@@ -155,8 +156,9 @@ contributor:
     Medical Center, Los Angeles, CA, USA
   email: Ueli.Rutishauser@cshs.org
   identifier:
-    identifier: 0000-0002-9207-7069
-    identifierType: ORCID
+    '@type': schema:PropertyValue
+    propertyID: ORCID
+    value: 0000-0002-9207-7069
   name: Ueli Rutishauser
   roleName:
   - Author

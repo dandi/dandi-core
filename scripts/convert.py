@@ -1,6 +1,5 @@
 import json
 import yaml
-import os
 
 schemav1 = "schema/dandiset.json"
 
@@ -46,8 +45,12 @@ def toContributor(value):
             contrib["awardNumber"] = item["awardNumber"]
             del item["awardNumber"]
         if "orcid" in item:
-            contrib["identifier"] = {"identifier": item["orcid"],
-                                     "identifierType": "ORCID"}
+            if item["orcid"]:
+                contrib["identifier"] = {"@type": "schema:PropertyValue",
+                                         "value": item["orcid"],
+                                         "propertyID": "ORCID"}
+            else:
+                contrib["identifier"] = ""
             del item["orcid"]
         contrib.update(**{f"{k}":v for k,v in item.items()})
         out.append(contrib)
@@ -130,8 +133,7 @@ def convertv1(filename):
                 value = [value]
             newmeta[newkey].extend(value)
     with open(filename.replace(".json", "_converted.yaml"), "wt") as fp:
-        yaml.dump(newmeta, fp, indent=2,
-                  default_flow_style=False)
+        yaml.dump(newmeta, fp, indent=2)
     return newmeta
 
 
