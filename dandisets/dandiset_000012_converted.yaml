@@ -1,0 +1,28 @@
+contributor:
+- affiliations:
+  - Eli and Edythe Broad Center of Regeneration Medicine and Stem Cell Research UCSF
+    School of Medicine
+  name: Li Zhou
+  roleName:
+  - Author
+  - ContactPerson
+- name: Arnold Kriegstein
+  roleName:
+  - Author
+dandisetStats:
+- 38
+- numberOfSubjects: 4
+- 8
+description: Data from the Kriegstein Lab as part of the BICCN
+identifier:
+  propertyID: DANDI
+  value: '000012'
+name: Kriegstein2020
+variableMeasured:
+- maximum: 23.0
+  minimum: 18.0
+  name: age
+  unitText: Gestational Week
+- name: species
+  value:
+  - Homo sapiens

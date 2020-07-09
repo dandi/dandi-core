@@ -1,0 +1,117 @@
+{
+  "dandiset": {
+    "age": {
+      "maximum": "P142D",
+      "minimum": "P108D",
+      "units": "TODO"
+    },
+    "contributors": [
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "email": "joshs@alleninstitute.org",
+        "name": "Josh Siegle",
+        "orcid": "0000-0002-7736-4844",
+        "roles": [
+          "Author",
+          "ContactPerson",
+          "ProjectLeader"
+        ]
+      },
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "email": "waynew@alleninstitute.org",
+        "name": "Wayne Wakeman",
+        "orcid": "0000-0002-3693-3609",
+        "roles": [
+          "ContactPerson",
+          "DataManager"
+        ]
+      },
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "name": "Xiaoxuan Jia",
+        "orcid": "0000-0001-5484-9331",
+        "roles": [
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "name": "Severine Durand",
+        "orcid": "0000-001-7788-0200",
+        "roles": [
+          "Data Collector"
+        ]
+      },
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "name": "Gregg Heller",
+        "orcid": "0000-0003-3552-996X",
+        "roles": [
+          "Data Collector"
+        ]
+      },
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "name": "Tamina Ramirez",
+        "orcid": "0000-0002-6569-5291",
+        "roles": [
+          "Data Collector"
+        ]
+      },
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "name": "Nile Graddis",
+        "orcid": "0000-0003-1290-3912",
+        "roles": [
+          "Software"
+        ]
+      },
+      {
+        "affiliations": [
+          "Allen Institute for Brain Science"
+        ],
+        "name": "Nicholas Mei",
+        "orcid": "0000-0001-8893-1763",
+        "roles": [
+          "Software"
+        ]
+      }
+    ],
+    "description": "Allen Institute October 2019 Mouse extracellular electrophysiology data, collected under analogous conditions to the two-photon Brain Observatory imaging experiments, with mice shown a subset of stimuli with a higher number of repeats. \n\nFor more information, see https://portal.brain-map.org/explore/circuits/visual-coding-neuropixels\n\nData are subject to Allen Institute Terms of Use policy, available at: http://www.alleninstitute.org/legal/terms-use/\n",
+    "identifier": "000022",
+    "keywords": [
+      "electrophysiology",
+      "life sciences",
+      "machine learning",
+      "neurobiology",
+      "signal processing"
+    ],
+    "name": "20191003_AIBS_mouse_ecephys_functional_connectivity",
+    "number_of_subjects": 26,
+    "organism": [
+      {
+        "species": "Mus musculus"
+      }
+    ],
+    "sex": [
+      "F",
+      "M"
+    ]
+  },
+  "assets": null
+}

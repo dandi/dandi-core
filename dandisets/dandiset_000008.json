@@ -1,0 +1,147 @@
+{
+  "dandiset": {
+    "age": {
+      "maximum": "P99D",
+      "minimum": "P100D",
+      "units": "TODO"
+    },
+    "contributors": [
+      {
+        "name": "Federico Scala",
+        "orcid": "",
+        "roles": [
+          "Data Collector",
+          "Author",
+          "ContactPerson"
+        ]
+      },
+      {
+        "name": "Dmitry Kobak",
+        "orcid": "0000-0002-5639-7209",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Matteo Bernabucci",
+        "orcid": "0000-0003-4458-117X",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Yves Bernaerts",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Cathryn Rene Cadwell",
+        "orcid": "0000-0003-1963-8285",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Jesus Ramon Castro",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Leonard Hartmanis",
+        "orcid": "0000-0002-4922-8781",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Xiaolong Jiang",
+        "orcid": "0000-0001-8066-1383",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Sophie Laturnus",
+        "orcid": "0000-0001-9532-788X",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Elanine Miranda",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Shalaka Mulherkar",
+        "orcid": "0000-0001-8736-527X",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Zheng Huan Tan",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Zizhen Yao",
+        "orcid": "0000-0002-9361-5607",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Hongkui Zeng",
+        "orcid": "0000-0002-0326-5878",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Rickard Sandberg",
+        "orcid": "0000-0001-6473-1740",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Philipp Berens",
+        "orcid": "0000-0002-0199-4727",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Andreas Savas Tolias",
+        "orcid": "0000-0002-4305-6376",
+        "roles": [
+          "Author",
+          "ContactPerson"
+        ]
+      }
+    ],
+    "description": "Data from the Tolias Lab shared in the BICCN project",
+    "identifier": "000008",
+    "license": "CC-BY-4.0",
+    "name": "Phenotypic variation within and across transcriptomic cell types in mouse motor cortex",
+    "number_of_cells": 1328,
+    "number_of_slices": 1260,
+    "number_of_subjects": 266,
+    "publications": [
+      {
+        "identifier": "doi:10.1101/2020.02.03.929158",
+        "url": "https://www.biorxiv.org/content/10.1101/2020.02.03.929158v1.full"
+      }
+    ],
+    "sex": [
+      "F",
+      "M"
+    ]
+  },
+  "assets": null
+}

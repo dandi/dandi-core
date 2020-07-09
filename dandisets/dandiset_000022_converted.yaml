@@ -1,0 +1,99 @@
+contributor:
+- affiliations:
+  - Allen Institute for Brain Science
+  email: joshs@alleninstitute.org
+  identifier:
+    propertyID: ORCID
+    value: 0000-0002-7736-4844
+  name: Josh Siegle
+  roleName:
+  - Author
+  - ContactPerson
+  - ProjectLeader
+- affiliations:
+  - Allen Institute for Brain Science
+  email: waynew@alleninstitute.org
+  identifier:
+    propertyID: ORCID
+    value: 0000-0002-3693-3609
+  name: Wayne Wakeman
+  roleName:
+  - ContactPerson
+  - DataManager
+- affiliations:
+  - Allen Institute for Brain Science
+  identifier:
+    propertyID: ORCID
+    value: 0000-0001-5484-9331
+  name: Xiaoxuan Jia
+  roleName:
+  - Validation
+- affiliations:
+  - Allen Institute for Brain Science
+  identifier:
+    propertyID: ORCID
+    value: 0000-001-7788-0200
+  name: Severine Durand
+  roleName:
+  - DataCollector
+- affiliations:
+  - Allen Institute for Brain Science
+  identifier:
+    propertyID: ORCID
+    value: 0000-0003-3552-996X
+  name: Gregg Heller
+  roleName:
+  - DataCollector
+- affiliations:
+  - Allen Institute for Brain Science
+  identifier:
+    propertyID: ORCID
+    value: 0000-0002-6569-5291
+  name: Tamina Ramirez
+  roleName:
+  - DataCollector
+- affiliations:
+  - Allen Institute for Brain Science
+  identifier:
+    propertyID: ORCID
+    value: 0000-0003-1290-3912
+  name: Nile Graddis
+  roleName:
+  - Software
+- affiliations:
+  - Allen Institute for Brain Science
+  identifier:
+    propertyID: ORCID
+    value: 0000-0001-8893-1763
+  name: Nicholas Mei
+  roleName:
+  - Software
+dandisetStats:
+  numberOfSubjects: 26
+description: "Allen Institute October 2019 Mouse extracellular electrophysiology data,\
+  \ collected under analogous conditions to the two-photon Brain Observatory imaging\
+  \ experiments, with mice shown a subset of stimuli with a higher number of repeats.\
+  \ \n\nFor more information, see https://portal.brain-map.org/explore/circuits/visual-coding-neuropixels\n\
+  \nData are subject to Allen Institute Terms of Use policy, available at: http://www.alleninstitute.org/legal/terms-use/\n"
+identifier:
+  propertyID: DANDI
+  value: '000022'
+keywords:
+- electrophysiology
+- life sciences
+- machine learning
+- neurobiology
+- signal processing
+name: 20191003_AIBS_mouse_ecephys_functional_connectivity
+variableMeasured:
+- maximum: 142.0
+  minimum: 108.0
+  name: age
+  unitText: '8'
+- name: species
+  value:
+  - Mus musculus
+- name: sex
+  value:
+  - F
+  - M

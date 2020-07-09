@@ -1,0 +1,52 @@
+{
+  "dandiset": {
+    "contributors": [
+      {
+        "name": "Samuel Hires",
+        "orcid": "0000-0003-3498-0388",
+        "roles": [
+          "Author",
+          "ContactPerson",
+          "Data Collector",
+          "DataManager"
+        ]
+      },
+      {
+        "name": "Diego Gutnisky",
+        "orcid": "0000-0002-8578-0039",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Jianing Yu",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": " Daniel H O'Connor",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Karel Svoboda",
+        "roles": [
+          "Author"
+        ]
+      }
+    ],
+    "description": "Data from \"Low-noise encoding of active touch by layer 4 in the somatosensory cortex\" Hires, Gutnisky et al. Elife 2015",
+    "identifier": "000013",
+    "license": "CC-BY-4.0",
+    "name": "Low-noise encoding of active touch by layer 4 in the somatosensory cortex",
+    "publications": [
+      {
+        "identifier": "doi:10.7554/eLife.06619.001",
+        "url": "https://elifesciences.org/articles/06619"
+      }
+    ]
+  },
+  "assets": null
+}

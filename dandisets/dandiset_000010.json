@@ -1,0 +1,65 @@
+{
+  "dandiset": {
+    "contributors": [
+      {
+        "name": "Nuo Li",
+        "orcid": "0000-0002-6613-5018",
+        "roles": [
+          "Author",
+          "ContactPerson"
+        ]
+      },
+      {
+        "name": "Tsai-Wen Chen",
+        "orcid": "0000-0002-3407-8223",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Zengcai V. Guo",
+        "orcid": "0000-0002-4140-7961",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Charles R. Gerfen",
+        "orcid": "0000-0001-9008-4882",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Karel Svoboda",
+        "orcid": "0000-0002-6670-7362",
+        "roles": [
+          "Author"
+        ]
+      }
+    ],
+    "description": "Data from \"A motor cortex circuit for motor planning and movement\" Li et al. Nature 2015",
+    "identifier": "000010",
+    "license": "CC-BY-4.0",
+    "name": "A motor cortex circuit for motor planning and movement",
+    "number_of_subjects": 23,
+    "organism": [
+      {
+        "species": "Mus musculus"
+      }
+    ],
+    "publications": [
+      {
+        "identifier": "doi:10.1038/nature14178",
+        "url": "https://www.nature.com/articles/nature14178"
+      },
+      "doi:10.1038/nature14178",
+      "https://doi.org/10.1038/nature14178"
+    ],
+    "sex": [
+      "F",
+      "M"
+    ]
+  },
+  "assets": null
+}

@@ -1,0 +1,44 @@
+contributor:
+- affiliations:
+  - Janelia Research Campus, Howard Hughes Medical Institute
+  name: Jianing Yu
+  roleName:
+  - Author
+- affiliations:
+  - Janelia Research Campus, Howard Hughes Medical Institute
+  name: Diego A Gutnisky
+  roleName:
+  - Author
+- affiliations:
+  - Janelia Research Campus, Howard Hughes Medical Institute
+  name: S Andrew Hires
+  roleName:
+  - Author
+- affiliations:
+  - Janelia Research Campus, Howard Hughes Medical Institute
+  name: Karel Svoboda
+  roleName:
+  - Author
+  - ContactPerson
+dandisetStats:
+  numberOfSubjects: 55
+description: intracellular and extracellular electrophysiology recordings performed
+  on mouse barrel cortex and ventral posterolateral nucleus (vpm) in whisker-based
+  object locating task.
+identifier:
+  propertyID: DANDI
+  value: '000005'
+license: CC-BY-4.0
+name: Electrophysiology data from thalamic and cortical neurons during somatosensation
+relatedResource:
+- identifier: doi:10.1038/nn.4412
+  relation: IsDescribedBy
+  url: https://doi.org/10.1038/nn.4412
+variableMeasured:
+- name: species
+  value:
+  - Mus musculus
+- name: sex
+  value:
+  - F
+  - M

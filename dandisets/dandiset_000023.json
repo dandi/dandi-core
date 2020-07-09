@@ -1,0 +1,23 @@
+{
+  "dandiset": {
+    "age": {
+      "maximum": "P9855.0D",
+      "minimum": "P10220.0D",
+      "units": "TODO"
+    },
+    "description": "Allen Institute June 2020 Human PatchSeq icephys data",
+    "identifier": "000023",
+    "name": "20200611_AIBS_human",
+    "number_of_subjects": 34,
+    "organism": [
+      {
+        "species": "Homo Sapiens"
+      }
+    ],
+    "sex": [
+      "F",
+      "M"
+    ]
+  },
+  "assets": null
+}

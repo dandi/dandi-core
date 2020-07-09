@@ -1,0 +1,64 @@
+{
+  "dandiset": {
+    "contributors": [
+      {
+        "affiliations": [
+          "Janelia Research Campus, Howard Hughes Medical Institute"
+        ],
+        "name": "Jianing Yu",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "affiliations": [
+          "Janelia Research Campus, Howard Hughes Medical Institute"
+        ],
+        "name": "Diego A Gutnisky",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "affiliations": [
+          "Janelia Research Campus, Howard Hughes Medical Institute"
+        ],
+        "name": "S Andrew Hires",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "affiliations": [
+          "Janelia Research Campus, Howard Hughes Medical Institute"
+        ],
+        "name": "Karel Svoboda",
+        "roles": [
+          "Author",
+          "ContactPerson"
+        ]
+      }
+    ],
+    "description": "intracellular and extracellular electrophysiology recordings performed on mouse barrel cortex and ventral posterolateral nucleus (vpm) in whisker-based object locating task.",
+    "identifier": "000005",
+    "license": "CC-BY-4.0",
+    "name": "Electrophysiology data from thalamic and cortical neurons during somatosensation",
+    "number_of_subjects": 55,
+    "organism": [
+      {
+        "species": "Mus musculus"
+      }
+    ],
+    "publications": [
+      {
+        "identifier": "doi:10.1038/nn.4412",
+        "url": "https://doi.org/10.1038/nn.4412"
+      }
+    ],
+    "sex": [
+      "F",
+      "M"
+    ]
+  },
+  "assets": null
+}

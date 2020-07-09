@@ -21,7 +21,10 @@ mapping = {'identifier': ['identifier'],
            'age': ['variableMeasured'],
            'organism': ['variableMeasured'],
            'sex': ['variableMeasured'],
-           'number_of_subjects': ['dandisetStats', 'numberOfSubjects']
+           'number_of_subjects': ['dandisetStats', 'numberOfSubjects'],
+           'number_of_cells': ['dandisetStats', 'numberOfCells'],
+           'number_of_cells': ['dandisetStats', 'numberOfCells'],
+           'number_of_tissue_samples': ['dandisetStats', 'numberOfSamples'],
            }
 
 
@@ -46,8 +49,7 @@ def toContributor(value):
             del item["awardNumber"]
         if "orcid" in item:
             if item["orcid"]:
-                contrib["identifier"] = {"@type": "schema:PropertyValue",
-                                         "value": item["orcid"],
+                contrib["identifier"] = {"value": item["orcid"],
                                          "propertyID": "ORCID"}
             else:
                 contrib["identifier"] = ""
@@ -63,7 +65,7 @@ def convertv1(filename):
     oldmeta = data["dandiset"] if "dandiset" in data else data
     newmeta = {}
     for oldkey, value in oldmeta.items():
-        if oldkey in ['language']:
+        if oldkey in ['language', 'altid', 'number_of_slices']:
             continue
         if oldkey not in mapping:
             raise KeyError(f"Could not find {oldkey}")
@@ -77,8 +79,8 @@ def convertv1(filename):
             value = [{"email": value["access_contact_email"],
                       "status": value["status"].capitalize()}]
         if oldkey == "identifier":
-            value = {"identifier": value,
-                     "identifierType": "DANDI"}
+            value = {"value": value,
+                     "propertyID": "DANDI"}
         if len(mapping[oldkey]) == 2:
             extra = mapping[oldkey][1]
             if newkey == 'contributor':
@@ -91,7 +93,15 @@ def convertv1(filename):
                     value = [value]
                 out = []
                 for item in value:
-                    out.append({k:v for k,v in item.items()})
+                    if isinstance(item, dict):
+                        out.append({k:v for k,v in item.items()})
+                    else:
+                        present = False
+                        for val in out:
+                            if item in val.values():
+                                present = True
+                        if not present:
+                            out.append({"url": item})
                 value = out
             if oldkey == 'number_of_subjects':
                 value = {extra: value}
@@ -110,9 +120,27 @@ def convertv1(filename):
                     vm["value"] = value
                 else:
                     if "maximum" in value:
-                        value["maximum"] = int(value["maximum"])
+                        if "days" in value["maximum"]:
+                            value["units"] = "days"
+                        if "Gestational" in value["maximum"]:
+                            value["units"] = "Gestational Week"
+                            value["maximum"] = value["maximum"].split()[-1]
+                        if value["maximum"].startswith("P"):
+                            value["maximum"] = value["maximum"][1:-1]
+                            value["units"] = value["maximum"][-1]
+                        if "None" not in value["maximum"]:
+                            value["maximum"] = float(value["maximum"].split()[0])
                     if "minimum" in value:
-                        value["minimum"] = int(value["minimum"])
+                        if "days" in value["minimum"]:
+                            value["units"] = "days"
+                        if "Gestational" in value["minimum"]:
+                            value["units"] = "Gestational Week"
+                            value["minimum"] = value["minimum"].split()[-1]
+                        if value["minimum"].startswith("P"):
+                            value["minimum"] = value["minimum"][1:-1]
+                            value["units"] = value["minimum"][-1]
+                        if "None" not in value["minimum"]:
+                            value["minimum"] = float(value["minimum"].split()[0])
                     value["unitText"] = value["units"]
                     del value["units"]
                     vm.update(**value)
@@ -138,7 +166,11 @@ def convertv1(filename):
 
 
 if __name__ == "__main__":
-    filename = "scripts/dandiset_000004.json"
+    import sys
+    if len(sys.argv) == 2:
+        filename = sys.argv[1]
+    else:
+        filename = "scripts/dandiset_000004.json"
     newmeta = convertv1(filename)
 
     # validate via the model

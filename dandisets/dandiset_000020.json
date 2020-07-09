@@ -1,0 +1,23 @@
+{
+  "dandiset": {
+    "age": {
+      "maximum": "P89.0D",
+      "minimum": "P34.0D",
+      "units": "TODO"
+    },
+    "description": "Allen Institute June 2020 Mouse PatchSeq icephys data",
+    "identifier": "000020",
+    "name": "20200611_AIBS_mouse",
+    "number_of_subjects": 297,
+    "organism": [
+      {
+        "species": "Mus musculus"
+      }
+    ],
+    "sex": [
+      "F",
+      "M"
+    ]
+  },
+  "assets": null
+}

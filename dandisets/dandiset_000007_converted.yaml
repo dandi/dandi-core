@@ -1,0 +1,59 @@
+contributor:
+- identifier: ''
+  name: Zhenyu Gao
+  roleName:
+  - Author
+- name: Courtney Davis
+  roleName:
+  - Author
+- identifier:
+    propertyID: ORCID
+    value: 0000-0002-6070-4769
+  name: Alyse M. Thomas
+  roleName:
+  - Author
+- identifier:
+    propertyID: ORCID
+    value: 0000-0001-9893-1505
+  name: Michael N. Economo
+  roleName:
+  - Author
+- identifier:
+    propertyID: ORCID
+    value: 0000-0003-0311-5244
+  name: Amada M. Abrego
+  roleName:
+  - Author
+- name: Karel Svoboda
+  roleName:
+  - Author
+- identifier:
+    propertyID: ORCID
+    value: 0000-0001-5628-8187
+  name: Chris I. De Zeeuw
+  roleName:
+  - Author
+- name: Nuo Li
+  roleName:
+  - Author
+  - ContactPerson
+dandisetStats:
+  numberOfSubjects: 13
+description: Extracelluar recording in ALM
+identifier:
+  propertyID: DANDI
+  value: '000007'
+license: CC-BY-4.0
+name: Extracellular recording in ALM
+relatedResource:
+- identifier: doi:10.1038/s41586-018-0633-x
+  relation: IsDescribedBy
+  url: https://www.nature.com/articles/s41586-018-0633-x
+variableMeasured:
+- name: species
+  value:
+  - Mus musculus
+- name: sex
+  value:
+  - F
+  - M

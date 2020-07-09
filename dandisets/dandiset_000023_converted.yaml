@@ -1,0 +1,19 @@
+dandisetStats:
+  numberOfSubjects: 34
+description: Allen Institute June 2020 Human PatchSeq icephys data
+identifier:
+  propertyID: DANDI
+  value: '000023'
+name: 20200611_AIBS_human
+variableMeasured:
+- maximum: 9855.0
+  minimum: 10220.0
+  name: age
+  unitText: '0'
+- name: species
+  value:
+  - Homo Sapiens
+- name: sex
+  value:
+  - F
+  - M

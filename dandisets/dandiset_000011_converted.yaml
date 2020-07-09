@@ -1,0 +1,42 @@
+contributor:
+- affiliation: Janelia Research Campus, Howard Hughes Medical Institute
+  identifier:
+    propertyID: ORCID
+    value: 0000-0002-6613-5018
+  name: Nuo Li
+  roleName:
+  - Author
+  - DataCollector
+- affiliation: Janelia Research Campus, Howard Hughes Medical Institute
+  name: Kayvon Daie
+  roleName:
+  - Author
+- affiliation: Janelia Research Campus, Howard Hughes Medical Institute
+  name: Karel Svoboda
+  roleName:
+  - Author
+- affiliation: Janelia Research Campus, Howard Hughes Medical Institute
+  name: Shaul Druckmann
+  roleName:
+  - Author
+  - ContactPerson
+dandisetStats:
+  numberOfSubjects: 19
+description: Data from "Robust neuronal dynamics in premotor cortex during motor planning"
+  Nature 2016
+identifier:
+  propertyID: DANDI
+  value: '000011'
+license: CC-BY-4.0
+name: Robust neuronal dynamics in premotor cortex during motor planning
+relatedResource:
+- identifier: doi:10.1038/nature17643
+  relation: IsDescribedBy
+variableMeasured:
+- name: species
+  value:
+  - Mus musculus
+- name: sex
+  value:
+  - F
+  - M

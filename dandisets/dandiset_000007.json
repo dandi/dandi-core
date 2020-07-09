@@ -1,0 +1,85 @@
+{
+  "dandiset": {
+    "altid": [
+      "Gao_2018",
+      "Gao2018"
+    ],
+    "contributors": [
+      {
+        "name": "Zhenyu Gao",
+        "orcid": "",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Courtney Davis",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Alyse M. Thomas",
+        "orcid": "0000-0002-6070-4769",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Michael N. Economo",
+        "orcid": "0000-0001-9893-1505",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Amada M. Abrego",
+        "orcid": "0000-0003-0311-5244",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Karel Svoboda",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Chris I. De Zeeuw",
+        "orcid": "0000-0001-5628-8187",
+        "roles": [
+          "Author"
+        ]
+      },
+      {
+        "name": "Nuo Li",
+        "roles": [
+          "Author",
+          "ContactPerson"
+        ]
+      }
+    ],
+    "description": "Extracelluar recording in ALM",
+    "identifier": "000007",
+    "license": "CC-BY-4.0",
+    "name": "Extracellular recording in ALM",
+    "number_of_subjects": 13,
+    "organism": [
+      {
+        "species": "Mus musculus"
+      }
+    ],
+    "publications": [
+      {
+        "identifier": "doi:10.1038/s41586-018-0633-x",
+        "url": "https://www.nature.com/articles/s41586-018-0633-x"
+      }
+    ],
+    "sex": [
+      "F",
+      "M"
+    ]
+  },
+  "assets": null
+}

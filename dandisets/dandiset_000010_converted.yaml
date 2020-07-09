@@ -1,0 +1,55 @@
+contributor:
+- identifier:
+    propertyID: ORCID
+    value: 0000-0002-6613-5018
+  name: Nuo Li
+  roleName:
+  - Author
+  - ContactPerson
+- identifier:
+    propertyID: ORCID
+    value: 0000-0002-3407-8223
+  name: Tsai-Wen Chen
+  roleName:
+  - Author
+- identifier:
+    propertyID: ORCID
+    value: 0000-0002-4140-7961
+  name: Zengcai V. Guo
+  roleName:
+  - Author
+- identifier:
+    propertyID: ORCID
+    value: 0000-0001-9008-4882
+  name: Charles R. Gerfen
+  roleName:
+  - Author
+- identifier:
+    propertyID: ORCID
+    value: 0000-0002-6670-7362
+  name: Karel Svoboda
+  roleName:
+  - Author
+dandisetStats:
+  numberOfSubjects: 23
+description: Data from "A motor cortex circuit for motor planning and movement" Li
+  et al. Nature 2015
+identifier:
+  propertyID: DANDI
+  value: '000010'
+license: CC-BY-4.0
+name: A motor cortex circuit for motor planning and movement
+relatedResource:
+- identifier: doi:10.1038/nature14178
+  relation: IsDescribedBy
+  url: https://www.nature.com/articles/nature14178
+- relation: IsDescribedBy
+  url: https://doi.org/10.1038/nature14178
+variableMeasured:
+- name: species
+  value:
+  - Mus musculus
+- name: sex
+  value:
+  - F
+  - M

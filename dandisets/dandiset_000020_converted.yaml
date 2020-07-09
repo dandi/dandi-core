@@ -1,0 +1,19 @@
+dandisetStats:
+  numberOfSubjects: 297
+description: Allen Institute June 2020 Mouse PatchSeq icephys data
+identifier:
+  propertyID: DANDI
+  value: '000020'
+name: 20200611_AIBS_mouse
+variableMeasured:
+- maximum: 89.0
+  minimum: 34.0
+  name: age
+  unitText: '0'
+- name: species
+  value:
+  - Mus musculus
+- name: sex
+  value:
+  - F
+  - M

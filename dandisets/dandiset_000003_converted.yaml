@@ -1,0 +1,54 @@
+contributor:
+- identifier: ''
+  name: Yuta Senzai
+  roleName:
+  - Author
+  - ContactPerson
+  - DataCollector
+  - FormalAnalysis
+- identifier:
+    propertyID: ORCID
+    value: 0000-0001-8481-0796
+  name: Antonio Fernandez-Ruiz
+  roleName:
+  - Author
+  - FormalAnalysis
+- identifier:
+    propertyID: ORCID
+    value: 0000-0002-3100-4800
+  name: Gyorgy Buzsaki
+  roleName:
+  - Author
+dandisetStats:
+  numberOfSubjects: 15
+description: Data from "Layer-Specific Physiological Features and Interlaminar Interactions
+  in the Primary Visual Cortex of the Mouse" Senzai, Fernandez-Ruiz, Buzsaki, Neuron
+  2019. Electrophysiology recordings of hippocampus during theta maze exploration
+identifier:
+  propertyID: DANDI
+  value: '000003'
+keywords:
+- alpha rhyth
+- cell types
+- cortical layers
+- current source density
+- laminar recordings
+- optogenetics
+- oscillations
+- primary visual cortex
+- sleep
+license: CC-BY-4.0
+name: Layer-Specific Physiological Features and Interlaminar Interactions in the Primary
+  Visual Cortex of the Mouse
+relatedResource:
+- identifier: doi:10.1016/j.neuron.2016.12.011
+  relation: IsDescribedBy
+  url: https://doi.org/10.1016/j.neuron.2016.12.011
+variableMeasured:
+- maximum: None
+  minimum: 14.0
+  name: age
+  unitText: days
+- name: species
+  value:
+  - Mus musculus

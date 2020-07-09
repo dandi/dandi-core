@@ -1,0 +1,39 @@
+{
+  "dandiset": {
+    "age": {
+      "maximum": "Gestational Week 23",
+      "minimum": "Gestational Week 18",
+      "units": "TODO"
+    },
+    "contributors": [
+      {
+        "affiliations": [
+          "Eli and Edythe Broad Center of Regeneration Medicine and Stem Cell Research UCSF School of Medicine"
+        ],
+        "name": "Li Zhou",
+        "roles": [
+          "Author",
+          "ContactPerson"
+        ]
+      },
+      {
+        "name": "Arnold Kriegstein",
+        "roles": [
+          "Author"
+        ]
+      }
+    ],
+    "description": "Data from the Kriegstein Lab as part of the BICCN",
+    "identifier": "000012",
+    "name": "Kriegstein2020",
+    "number_of_cells": 38,
+    "number_of_subjects": 4,
+    "number_of_tissue_samples": 8,
+    "organism": [
+      {
+        "species": "Homo sapiens"
+      }
+    ]
+  },
+  "assets": null
+}
