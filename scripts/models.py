@@ -174,12 +174,15 @@ class BioSample(BaseModel):
 
 
 class BaseDandiset(BaseModel):
+    """
+    Metadata required to create a new Dandiset.
+    """
     name: str
     description: str
 
 
 class Dandiset(BaseDandiset):
-    """A body of structured information describing a DANDI dataset
+    """A body of structured information describing a DANDI dataset.
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
     identifier: Identifier = Field(readonly=True)
@@ -214,6 +217,9 @@ class PublishedDandiset(Dandiset):
 
 
 class Asset(BaseModel):
+    """
+    C2M2 (Level 0 and 1) and schema.org were used to establish the fields.
+    """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
     identifier: Identifier = Field(readonly=True)
     contentUrl: List[AnyUrl]
@@ -240,5 +246,6 @@ class Asset(BaseModel):
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
 if __name__ == "__main__":
-    #print(Dandiset.schema_json(indent=2))
-    print(Asset.schema_json(indent=2))
+    import sys
+    if len(sys.argv) == 2:
+        print({'dandiset': Dandiset, 'asset': Asset}[sys.argv[1]].schema_json(indent=2))
