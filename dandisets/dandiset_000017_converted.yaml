@@ -2,30 +2,30 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0001-7029-2908
-  name: Nicholas Steinmetz
+  name: Steinmetz, Nicholas
   roleName:
   - Author
   - ContactPerson
 - identifier:
     propertyID: ORCID
     value: 0000-0001-9054-2599
-  name: Peter Zatka-Haas
+  name: Zatka-Haas, Peter
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0003-4880-7682
-  name: Matteo Carandini
+  name: Carandini, Matteo
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-5930-6456
-  name: Kenneth Harris
+  name: Harris, Kenneth
   roleName:
   - Author
 - identifier: ''
-  name: Renee Wang
+  name: Wang, Renee
   roleName:
   - DataCurator
 description: Data from "Distributed coding of choice, action and engagement across

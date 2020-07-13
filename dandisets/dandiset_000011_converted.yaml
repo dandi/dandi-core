@@ -3,20 +3,20 @@ contributor:
   identifier:
     propertyID: ORCID
     value: 0000-0002-6613-5018
-  name: Nuo Li
+  name: Li, Nuo
   roleName:
   - Author
   - DataCollector
 - affiliation: Janelia Research Campus, Howard Hughes Medical Institute
-  name: Kayvon Daie
+  name: Daie, Kayvon
   roleName:
   - Author
 - affiliation: Janelia Research Campus, Howard Hughes Medical Institute
-  name: Karel Svoboda
+  name: Svoboda, Karel
   roleName:
   - Author
 - affiliation: Janelia Research Campus, Howard Hughes Medical Institute
-  name: Shaul Druckmann
+  name: Druckmann, Shaul
   roleName:
   - Author
   - ContactPerson

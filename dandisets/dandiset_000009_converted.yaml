@@ -2,34 +2,34 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0002-4140-7961
-  name: Zengcai Guo
+  name: Guo, Zengcai
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0003-4580-2763
-  name: Hidehiko Inagaki
+  name: Inagaki, Hidehiko
   roleName:
   - Author
-- name: Kayvon Daie
+- name: Daie, Kayvon
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0003-0068-3377
-  name: Shaul Druckmann
+  name: Druckmann, Shaul
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-9008-4882
-  name: Charles R. Gerfen
+  name: Gerfen, Charles R.
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-6670-7362
-  name: Karel Svoboda
+  name: Svoboda, Karel
   roleName:
   - Author
   - ContactPerson

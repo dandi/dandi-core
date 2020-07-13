@@ -1,39 +1,39 @@
 contributor:
 - identifier: ''
-  name: Zhenyu Gao
+  name: Gao, Zhenyu
   roleName:
   - Author
-- name: Courtney Davis
+- name: Davis, Courtney
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-6070-4769
-  name: Alyse M. Thomas
+  name: Thomas, Alyse M.
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-9893-1505
-  name: Michael N. Economo
+  name: Economo, Michael N.
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0003-0311-5244
-  name: Amada M. Abrego
+  name: Abrego, Amada M.
   roleName:
   - Author
-- name: Karel Svoboda
+- name: Svoboda, Karel
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-5628-8187
-  name: Chris I. De Zeeuw
+  name: Zeeuw, Chris I. De
   roleName:
   - Author
-- name: Nuo Li
+- name: Li, Nuo
   roleName:
   - Author
   - ContactPerson

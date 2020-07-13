@@ -1,6 +1,6 @@
 contributor:
 - identifier: ''
-  name: Federico Scala
+  name: Scala, Federico
   roleName:
   - DataCollector
   - Author
@@ -8,85 +8,85 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0002-5639-7209
-  name: Dmitry Kobak
+  name: Kobak, Dmitry
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0003-4458-117X
-  name: Matteo Bernabucci
+  name: Bernabucci, Matteo
   roleName:
   - Author
-- name: Yves Bernaerts
+- name: Bernaerts, Yves
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0003-1963-8285
-  name: Cathryn Rene Cadwell
+  name: Cadwell, Cathryn Rene
   roleName:
   - Author
-- name: Jesus Ramon Castro
+- name: Castro, Jesus Ramon
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-4922-8781
-  name: Leonard Hartmanis
+  name: Hartmanis, Leonard
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-8066-1383
-  name: Xiaolong Jiang
+  name: Jiang, Xiaolong
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-9532-788X
-  name: Sophie Laturnus
+  name: Laturnus, Sophie
   roleName:
   - Author
-- name: Elanine Miranda
+- name: Miranda, Elanine
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-8736-527X
-  name: Shalaka Mulherkar
+  name: Mulherkar, Shalaka
   roleName:
   - Author
-- name: Zheng Huan Tan
+- name: Tan, Zheng Huan
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-9361-5607
-  name: Zizhen Yao
+  name: Yao, Zizhen
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-0326-5878
-  name: Hongkui Zeng
+  name: Zeng, Hongkui
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-6473-1740
-  name: Rickard Sandberg
+  name: Sandberg, Rickard
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-0199-4727
-  name: Philipp Berens
+  name: Berens, Philipp
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-4305-6376
-  name: Andreas Savas Tolias
+  name: Tolias, Andreas Savas
   roleName:
   - Author
   - ContactPerson

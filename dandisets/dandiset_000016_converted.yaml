@@ -2,14 +2,14 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0001-6454-2448
-  name: Farzaneh Najafi
+  name: Najafi, Farzaneh
   roleName:
   - Author
   - ContactPerson
 - identifier:
     propertyID: ORCID
     value: 0000-0002-3205-3794
-  name: Anne K. Churchland
+  name: Churchland, Anne K.
   roleName:
   - Author
 dandisetStats:

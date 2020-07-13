@@ -228,18 +228,18 @@ class Asset(BaseModel):
     digest: Digest
     name: str
     datePublished: date
-    dataType: AnyUrl
-
     path: str = None
+    isPartOf: Identifier = None
 
+    dataType: AnyUrl
     sameAs: AnyUrl = None
-    access: List[AccessRequirements]
+    access: List[AccessRequirements] = None
     relatedResource: List[Resource] = None
+
     modality: List[str] = None
     measurementTechnique: List[str] = Field(readonly=True)
     variableMeasured: List[PropertyValue] = Field(readonly=True)
 
-    isPartOf: Identifier = None
     generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
     wasDerivedFrom: BioSample = None
 

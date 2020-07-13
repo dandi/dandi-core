@@ -2,32 +2,32 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0002-6613-5018
-  name: Nuo Li
+  name: Li, Nuo
   roleName:
   - Author
   - ContactPerson
 - identifier:
     propertyID: ORCID
     value: 0000-0002-3407-8223
-  name: Tsai-Wen Chen
+  name: Chen, Tsai-Wen
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-4140-7961
-  name: Zengcai V. Guo
+  name: Guo, Zengcai V.
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0001-9008-4882
-  name: Charles R. Gerfen
+  name: Gerfen, Charles R.
   roleName:
   - Author
 - identifier:
     propertyID: ORCID
     value: 0000-0002-6670-7362
-  name: Karel Svoboda
+  name: Svoboda, Karel
   roleName:
   - Author
 dandisetStats:

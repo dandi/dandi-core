@@ -1,6 +1,6 @@
 contributor:
 - identifier: ''
-  name: Yuta Senzai
+  name: Senzai, Yuta
   roleName:
   - Author
   - ContactPerson
@@ -9,14 +9,14 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0001-8481-0796
-  name: Antonio Fernandez-Ruiz
+  name: Fernandez-Ruiz, Antonio
   roleName:
   - Author
   - FormalAnalysis
 - identifier:
     propertyID: ORCID
     value: 0000-0002-3100-4800
-  name: Gyorgy Buzsaki
+  name: Buzsaki, Gyorgy
   roleName:
   - Author
 dandisetStats:

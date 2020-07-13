@@ -2,12 +2,12 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0002-1974-4603
-  name: Kristofer E. Bouchard
+  name: Bouchard, Kristofer E.
   roleName:
   - Author
   - DataCollector
   - FormalAnalysis
-- name: Edward F. Chang
+- name: Chang, Edward F.
   roleName:
   - Author
   - ContactPerson

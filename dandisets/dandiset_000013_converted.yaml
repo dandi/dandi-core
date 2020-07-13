@@ -2,7 +2,7 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0003-3498-0388
-  name: Samuel Hires
+  name: Hires, Samuel
   roleName:
   - Author
   - ContactPerson
@@ -11,16 +11,16 @@ contributor:
 - identifier:
     propertyID: ORCID
     value: 0000-0002-8578-0039
-  name: Diego Gutnisky
+  name: Gutnisky, Diego
   roleName:
   - Author
-- name: Jianing Yu
+- name: Yu, Jianing
   roleName:
   - Author
-- name: ' Daniel H O''Connor'
+- name: O'Connor, Daniel H
   roleName:
   - Author
-- name: Karel Svoboda
+- name: Svoboda, Karel
   roleName:
   - Author
 description: Data from "Low-noise encoding of active touch by layer 4 in the somatosensory
