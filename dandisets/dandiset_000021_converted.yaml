@@ -1,5 +1,5 @@
 contributor:
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   email: joshs@alleninstitute.org
   identifier:
@@ -10,7 +10,7 @@ contributor:
   - Author
   - ContactPerson
   - ProjectLeader
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   email: waynew@alleninstitute.org
   identifier:
@@ -20,7 +20,7 @@ contributor:
   roleName:
   - DataManager
   - ContactPerson
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   identifier:
     propertyID: ORCID
@@ -28,7 +28,7 @@ contributor:
   name: Jia, Xiaoxuan
   roleName:
   - Validation
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   identifier:
     propertyID: ORCID
@@ -36,7 +36,7 @@ contributor:
   name: Heller, Gregg
   roleName:
   - DataCollector
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   identifier:
     propertyID: ORCID
@@ -44,7 +44,7 @@ contributor:
   name: Ramirez, Tamina
   roleName:
   - DataCollector
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   identifier:
     propertyID: ORCID
@@ -52,7 +52,7 @@ contributor:
   name: Graddis, Nile
   roleName:
   - Software
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   identifier:
     propertyID: ORCID
@@ -60,7 +60,7 @@ contributor:
   name: Mei, Nicholas
   roleName:
   - Software
-- affiliations:
+- affiliation:
   - Allen Institute for Brain Science
   identifier:
     propertyID: ORCID

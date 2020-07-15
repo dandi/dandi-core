@@ -89,7 +89,7 @@ class IdentifierType(str, Enum):
     ror = "ROR"
     dandi = "DANDI"
     rrid = "RRID"
-    none = "No identifier prefix"
+    unknown = "Unknown"
 
 
 class PropertyValue(BaseModel):
@@ -99,19 +99,16 @@ class PropertyValue(BaseModel):
     unitText: str = None
     value: Union[bool, float, str, int, List[Union[bool, float, str, int]]] = None
     valueReference: PropertyValue = None
-    propertyID: Union[str, AnyUrl] = None
+    propertyID: Union[AnyUrl, IdentifierType] = None
 
 
 PropertyValue.update_forward_refs()
-
-
-class Identifier(BaseModel):
-    identifier: Union[str, AnyUrl, PropertyValue]
+Identifier = Union[str, AnyUrl, PropertyValue]
 
 
 class Contributor(BaseModel):
     identifier: Identifier = None
-    name: str
+    name: str = Field(description="Use the format: lastname, firstname ...", title="Name")
     email: EmailStr = None
     url: AnyUrl = None
     roleName: List[RoleType]
@@ -128,7 +125,7 @@ class Organization(Contributor):
 
 
 class EthicsApproval(BaseModel):
-    identifier: Union[str, AnyUrl, Identifier] = None
+    identifier: Identifier = None
     name: str
     url: str
 
@@ -142,7 +139,7 @@ class Resource(BaseModel):
 
 
 class About(BaseModel):
-    identifier: Union[str, AnyUrl, Identifier] = None
+    identifier: Identifier = None
     name: str = None
 
 
@@ -182,8 +179,7 @@ class BaseDandiset(BaseModel):
 
 
 class Dandiset(BaseDandiset):
-    """A body of structured information describing a DANDI dataset.
-    """
+    """A body of structured information describing a DANDI dataset."""
     schemaVersion: str = Field(default="0.0.0", readonly=True)
     identifier: Identifier = Field(readonly=True)
 
@@ -217,8 +213,9 @@ class PublishedDandiset(Dandiset):
 
 
 class Asset(BaseModel):
-    """
-    C2M2 (Level 0 and 1) and schema.org were used to establish the fields.
+    """Metadata used to describe an asset.
+
+    Derived from C2M2 (Level 0 and 1) and schema.org
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
     identifier: Identifier = Field(readonly=True)

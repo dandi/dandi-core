@@ -23,7 +23,6 @@ mapping = {'identifier': ['identifier'],
            'sex': ['variableMeasured'],
            'number_of_subjects': ['dandisetStats', 'numberOfSubjects'],
            'number_of_cells': ['dandisetStats', 'numberOfCells'],
-           'number_of_cells': ['dandisetStats', 'numberOfCells'],
            'number_of_tissue_samples': ['dandisetStats', 'numberOfSamples'],
            }
 
@@ -56,6 +55,9 @@ def toContributor(value):
             else:
                 contrib["identifier"] = ""
             del item["orcid"]
+        if "affiliations" in item:
+            item["affiliation"] = item["affiliations"]
+            del item["affiliations"]
         contrib.update(**{f"{k}":v for k,v in item.items()})
         out.append(contrib)
     return out
@@ -105,7 +107,8 @@ def convertv1(filename):
                         if not present:
                             out.append({"url": item})
                 value = out
-            if oldkey == 'number_of_subjects':
+            if oldkey in ['number_of_subjects', 'number_of_cells',
+                          'number_of_tissue_samples']:
                 value = {extra: value}
                 extrakey = None
             if isinstance(value, list):

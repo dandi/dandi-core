@@ -5,7 +5,7 @@ access:
 - email: nand.chandravadia@cshs.org
   status: Open
 contributor:
-- affiliations:
+- affiliation:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: nand.chandravadia@cshs.org
   identifier:
@@ -28,7 +28,7 @@ contributor:
   - Software
   - Validation
   - Visualization
-- affiliations:
+- affiliation:
   - Institute for Interdisciplinary Brain and Behavioral Sciences, Crean College of
     Health and Behavioral Sciences, Schmid College of Science and Technology, Chapman
     University, Orange, CA, USA
@@ -41,7 +41,7 @@ contributor:
   - ProjectMember
   - Software
   - Validation
-- affiliations:
+- affiliation:
   - Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada
   email: Andrea.Schjetan@uhnresearch.ca
   identifier:
@@ -53,7 +53,7 @@ contributor:
   - DataCollector
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: april.carlson@tufts.edu
   identifier:
@@ -65,7 +65,7 @@ contributor:
   - DataCurator
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: mailyscm.faraut@gmail.com
   name: Faraut, Mailys
@@ -74,7 +74,7 @@ contributor:
   - DataCollector
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: Jeffrey.Chung@cshs.org
   name: Chung, Jeffrey M.
@@ -82,7 +82,7 @@ contributor:
   - Author
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: Chrystal.Reed@csmc.edu
   name: Reed, Chrystal M.
@@ -90,7 +90,7 @@ contributor:
   - Author
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Biological Systems & Engineering Division, Lawrence Berkeley National Laboratory,
     Berkeley, CA, USA
   - Department of Neurosurgery, Stanford University, Stanford, CA, USA
@@ -101,7 +101,7 @@ contributor:
   - Software
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Institute for Interdisciplinary Brain and Behavioral Sciences, Crean College of
     Health and Behavioral Sciences, Schmid College of Science and Technology, Chapman
     University, Orange, CA, USA
@@ -114,7 +114,7 @@ contributor:
   - Conceptualization
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto,
     Canada
   - Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada
@@ -124,7 +124,7 @@ contributor:
   - Author
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada
   - Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto,
     Canada
@@ -134,7 +134,7 @@ contributor:
   - Author
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   email: Adam.Mamelak@cshs.org
   name: Mamelak, Adam N.
@@ -142,7 +142,7 @@ contributor:
   - Author
   - ProjectMember
   - Validation
-- affiliations:
+- affiliation:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   - Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA
   - Division of Biology and Biological Engineering, California Institute of Technology,

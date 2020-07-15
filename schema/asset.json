@@ -1,5 +1,6 @@
 {
   "title": "Asset",
+  "description": "C2M2 (Level 0 and 1) and schema.org were used to establish the fields.",
   "type": "object",
   "properties": {
     "schemaVersion": {
@@ -11,9 +12,22 @@
     "identifier": {
       "title": "Identifier",
       "readonly": true,
-      "allOf": [
+      "anyOf": [
         {
-          "$ref": "#/definitions/Identifier"
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
         }
       ]
     },
@@ -57,16 +71,33 @@
       "type": "string",
       "format": "date"
     },
+    "path": {
+      "title": "Path",
+      "type": "string"
+    },
+    "isPartOf": {
+      "title": "Ispartof",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        {
+          "$ref": "#/definitions/PropertyValue"
+        }
+      ]
+    },
     "dataType": {
       "title": "Datatype",
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
       "format": "uri"
-    },
-    "path": {
-      "title": "Path",
-      "type": "string"
     },
     "sameAs": {
       "title": "Sameas",
@@ -112,9 +143,6 @@
         "$ref": "#/definitions/PropertyValue"
       }
     },
-    "isPartOf": {
-      "$ref": "#/definitions/Identifier"
-    },
     "generatedBy": {
       "title": "Generatedby",
       "readonly": true,
@@ -136,7 +164,6 @@
     "name",
     "datePublished",
     "dataType",
-    "access",
     "measurementTechnique",
     "variableMeasured"
   ],
@@ -214,43 +241,25 @@
           "title": "Propertyid",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
+            },
+            {
+              "enum": [
+                "DOI",
+                "ORCID",
+                "ROR",
+                "DANDI",
+                "RRID",
+                "Unknown"
+              ],
+              "type": "string"
             }
           ]
         }
       }
-    },
-    "Identifier": {
-      "title": "Identifier",
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
-        }
-      },
-      "required": [
-        "identifier"
-      ]
     },
     "Digest": {
       "title": "Digest",
@@ -314,7 +323,21 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/Identifier"
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
         },
         "name": {
           "title": "Name",

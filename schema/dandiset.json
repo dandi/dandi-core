@@ -1,6 +1,6 @@
 {
   "title": "Dandiset",
-  "description": "A body of structured information describing a DANDI dataset\n    ",
+  "description": "A body of structured information describing a DANDI dataset.\n    ",
   "type": "object",
   "properties": {
     "name": {
@@ -20,9 +20,22 @@
     "identifier": {
       "title": "Identifier",
       "readonly": true,
-      "allOf": [
+      "anyOf": [
         {
-          "$ref": "#/definitions/Identifier"
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
         }
       ]
     },
@@ -225,20 +238,28 @@
           "title": "Propertyid",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
+            },
+            {
+              "enum": [
+                "DOI",
+                "ORCID",
+                "ROR",
+                "DANDI",
+                "RRID",
+                "Unknown"
+              ],
+              "type": "string"
             }
           ]
         }
       }
     },
-    "Identifier": {
-      "title": "Identifier",
+    "Person": {
+      "title": "Person",
       "type": "object",
       "properties": {
         "identifier": {
@@ -257,21 +278,10 @@
               "$ref": "#/definitions/PropertyValue"
             }
           ]
-        }
-      },
-      "required": [
-        "identifier"
-      ]
-    },
-    "Person": {
-      "title": "Person",
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "$ref": "#/definitions/Identifier"
         },
         "name": {
           "title": "Name",
+          "description": "Use the format: lastname, firstname ...",
           "type": "string"
         },
         "email": {
@@ -349,10 +359,25 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/Identifier"
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
         },
         "name": {
           "title": "Name",
+          "description": "Use the format: lastname, firstname ...",
           "type": "string"
         },
         "email": {
@@ -475,7 +500,7 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/Identifier"
+              "$ref": "#/definitions/PropertyValue"
             }
           ]
         },
@@ -502,7 +527,7 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/Identifier"
+              "$ref": "#/definitions/PropertyValue"
             }
           ]
         },
@@ -525,7 +550,21 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/Identifier"
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
         },
         "name": {
           "title": "Name",

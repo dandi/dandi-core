@@ -1,5 +1,5 @@
 contributor:
-- affiliations:
+- affiliation:
   - Eli and Edythe Broad Center of Regeneration Medicine and Stem Cell Research UCSF
     School of Medicine
   name: Zhou, Li
@@ -10,9 +10,9 @@ contributor:
   roleName:
   - Author
 dandisetStats:
-- 38
+- numberOfCells: 38
 - numberOfSubjects: 4
-- 8
+- numberOfSamples: 8
 description: Data from the Kriegstein Lab as part of the BICCN
 identifier:
   propertyID: DANDI
