@@ -166,8 +166,8 @@ class Digest(BaseModel):
 
 
 class BioSample(BaseModel):
-    assayType: AnyUrl
-    anatomy: AnyUrl
+    assayType: AnyUrl # from OBI
+    anatomy: AnyUrl  # from UBERON
 
 
 class BaseDandiset(BaseModel):
@@ -189,7 +189,7 @@ class Dandiset(BaseDandiset):
     keywords: List[str]
     access: List[AccessRequirements]
     about: List[About] = None
-    study_target: List[Union[str, AnyUrl]] = None
+    studyTarget: List[Union[str, AnyUrl]] = None
     protocol: List[str] = None
     ethicsApproval: List[EthicsApproval] = None
     relatedResource: List[Resource] = None
@@ -228,7 +228,10 @@ class Asset(BaseModel):
     path: str = None
     isPartOf: Identifier = None
 
+    # this is from C2M2 level 1 - using EDAM vocabularies - in our case we would
+    # need to come up with things for neurophys
     dataType: AnyUrl
+
     sameAs: AnyUrl = None
     access: List[AccessRequirements] = None
     relatedResource: List[Resource] = None

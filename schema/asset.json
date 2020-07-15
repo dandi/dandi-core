@@ -1,6 +1,6 @@
 {
   "title": "Asset",
-  "description": "C2M2 (Level 0 and 1) and schema.org were used to establish the fields.",
+  "description": "Metadata used to describe an asset.\n\nDerived from C2M2 (Level 0 and 1) and schema.org",
   "type": "object",
   "properties": {
     "schemaVersion": {

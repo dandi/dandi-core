@@ -1,6 +1,6 @@
 {
   "title": "Dandiset",
-  "description": "A body of structured information describing a DANDI dataset.\n    ",
+  "description": "A body of structured information describing a DANDI dataset.",
   "type": "object",
   "properties": {
     "name": {
@@ -84,8 +84,8 @@
         "$ref": "#/definitions/About"
       }
     },
-    "study_target": {
-      "title": "Study Target",
+    "studyTarget": {
+      "title": "Studytarget",
       "type": "array",
       "items": {
         "anyOf": [
